@@ -219,16 +219,6 @@
   {
     "City": "Seattle",
     "Activity" : "Restaurant",
-    "Name" : "",
-    "Hours" : "",
-    "Price" : "",
-    "Website" : "",
-    "Reservations" : "",
-    "Min Age" : ""
-  },
-  {
-    "City": "Seattle",
-    "Activity" : "Restaurant",
     "Name" : "The Pink Door",
     "Hours" : "3.0",
     "Price" : "22.00",
