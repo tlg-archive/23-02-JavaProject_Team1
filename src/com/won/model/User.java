@@ -88,4 +88,5 @@ public class User {
     public void setRestaurant(boolean restaurant) {
         this.restaurant = restaurant;
     }
+
 }
