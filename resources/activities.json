@@ -12,5 +12,294 @@
     "Name" : "Hiking a 13'r",
     "Hours" : "6.0",
     "Price" : "7.0"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Chihuly Garden and Glass",
+    "Hours" : "4.0",
+    "Price" : "35.00",
+    "Website" : "https://www.chihulygardenandglass.com/"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "The Museum of Flight",
+    "Hours" : "2.5",
+    "Price" : "26.00",
+    "Website" : "https://www.museumofflight.org/"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Pike Place Market",
+    "Hours" : "2.0",
+    "Price" : "0.0",
+    "Website" : "https://www.pikeplacemarket.org/"
+  },
+
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Museum of Pop Culture",
+    "Hours" : "2.5",
+    "Price" : "30",
+    "Website" : "https://www.mopop.org/"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Museum of History & Industry",
+    "Hours" : "1.5",
+    "Price" : "7.0",
+    "Website" : "https://mohai.org/"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Seattle Public Library",
+    "Hours" : "5.0",
+    "Price" : "0.0",
+    "Website" : "https://www.spl.org/hours-and-locations/central-library"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Klondike Gold Rush National Historical Park",
+    "Hours" : "1.0",
+    "Price" : "0.0",
+    "Website" : "https://www.nps.gov/klse/index.htm",
+    "Capacity" : "4"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Seattle Aquarium",
+    "Hours" : "2.0",
+    "Price" : "20.0",
+    "Website" : "https://www.seattleaquarium.org/"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Seattle Center",
+    "Hours" : "3.0",
+    "Price" : "0.0",
+    "Website" : "http://www.seattlecenter.com/"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Optimism Brewing Company",
+    "Hours" : "2.0",
+    "Price" : "24.00",
+    "Website" : "http://optimismbrewing.com/",
+    "Min Age" : "21",
+    "Capacity" : "8"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "The Nest Rooftop",
+    "Hours" : "2.5",
+    "Price" : "46.00",
+    "Website" : "http://www.hyatt.com/hotel/washington/thompson-seattle/seath/dining",
+    "Min Age" : "21"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Seattle Beer Co",
+    "Hours" : "1.9",
+    "Price" : "20.00",
+    "Website" : "http://www.seattlebeerco.com/",
+    "Min Age" : "21",
+    "Capacity" : "5"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Indoor",
+    "Name" : "Reuben's Brews",
+    "Hours" : "1.0",
+    "Price" : "14.00",
+    "Website" : "http://www.aletrailmaps.com/reubens-brews.html",
+    "Min Age" : "21"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+  "City": "Seattle",
+  "Activity" : "Outdoor",
+  "Name" : "Viator Exclusive Tour - Mt. Rainier Day Trip from Seattle",
+  "Hours" : "8",
+  "Price" : "171.29",
+  "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d11449392-Viator_Exclusive_Tour_Mt_Rainier_Day_Trip_from_Seattle-Seattle_Washington.html",
+  "Equipment" : "Snow board gear"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Outdoor",
+    "Name" : "Visit Snoqualmie Falls and Hike to Twin Falls",
+    "Hours" : "4.0",
+    "Price" : "14.00",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d16913367-Visit_Snoqualmie_Falls_and_Hike_to_Twin_Falls-Seattle_Washington.html",
+    "Equipment" : "Hiking shoes, water."
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Outdoor",
+    "Name" : "Touring and Hiking in Mt. Rainier National Park",
+    "Hours" : "11.0",
+    "Price" : "190.00",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d24079169-Touring_and_Hiking_in_Mt_Rainier_National_Park-Seattle_Washington.html",
+    "Equipment" : "Climbing gear.  Cold weather clothing.  Food.  Water.  Some freaking mole skin probably."
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Outdoor",
+    "Name" : "Best of Olympic National Park from Seattle: All-Inclusive Small-Group Day Tour",
+    "Hours" : "12.0",
+    "Price" : "308.06",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d11470760-Best_of_Olympic_National_Park_from_Seattle_All_Inclusive_Small_Group_Day_Tour-Seatt.html"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Outdoor",
+    "Name" : "BEST Mount Rainier National Park Day Tour from Seattle ",
+    "Hours" : "9.0",
+    "Price" : "134.40",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d19497734-BEST_Mount_Rainier_National_Park_Day_Tour_from_Seattle-Seattle_Washington.html",
+    "Equipment" : "None. Driver will provide everything."
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Outdoor",
+    "Name" : "Skip the Line: Daily Admission at Woodland Park Zoo Ticket",
+    "Hours" : "5.0",
+    "Price" : "21.00",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d13357869-Skip_the_Line_Daily_Admission_at_Woodland_Park_Zoo_Ticket-Seattle_Washington.html"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Outdoor",
+    "Name" : "2-Hour Seattle Sailing Harbor Tour",
+    "Hours" : "2.0",
+    "Price" : "45.00",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d23995839-2_Hour_Seattle_Sailing_Harbor_Tour-Seattle_Washington.html"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "Pizzeria Credo",
+    "Hours" : "2.0",
+    "Price" : "18.95",
+    "Website" : "http://pizzeriacredo.com/",
+    "Reservations" : "false"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "",
+    "Hours" : "",
+    "Price" : "",
+    "Website" : "",
+    "Reservations" : "",
+    "Min Age" : ""
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "The Pink Door",
+    "Hours" : "3.0",
+    "Price" : "22.00",
+    "Website" : "http://www.thepinkdoor.net/",
+    "Reservations" : "true",
+    "Min Age" : "21"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "Chan Seattle",
+    "Hours" : "2.5",
+    "Price" : "45.00",
+    "Website" : "http://chanseattle.com/",
+    "Reservations" : "true"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "Tilikum Place Cafe",
+    "Hours" : "2.0",
+    "Price" : "33.00",
+    "Website" : "http://www.tilikumplacecafe.com/",
+    "Reservations" : "false"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "Spinasse",
+    "Hours" : "3.0",
+    "Price" : "85.00",
+    "Website" : "http://www.spinasse.com/",
+    "Reservations" : "true"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "",
+    "Hours" : "",
+    "Price" : "",
+    "Website" : "",
+    "Reservations" : "",
+    "Min Age" : ""
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "Ba Bar Capitol Hill",
+    "Hours" : "1.5",
+    "Price" : "19.00",
+    "Website" : "http://babarseattle.com/",
+    "Reservations" : "false"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "Rocco's",
+    "Hours" : "1.0",
+    "Price" : "15.00",
+    "Website" : "http://www.roccosseattle.com/",
+    "Reservations" : "false"
+  },
+  {
+    "City": "Seattle",
+    "Activity" : "Restaurant",
+    "Name" : "Beecher's Handmade Cheese",
+    "Hours" : ".5",
+    "Price" : "8.88",
+    "Website" : "http://www.beechershandmadecheese.com/",
+    "Reservations" : "false"
   }
 ]
