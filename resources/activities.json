@@ -1,0 +1,16 @@
+[
+  {
+    "City" : "Seattle",
+    "Activity" : "Indoor",
+    "Name": "Ping Pong at the Y",
+    "Hours": "2.0",
+    "Price" : "0.0"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Hiking a 13'r",
+    "Hours" : "6.0",
+    "Price" : "7.0"
+  }
+]
