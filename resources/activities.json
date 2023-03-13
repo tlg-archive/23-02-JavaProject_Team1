@@ -136,19 +136,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   {
   "City": "Seattle",
   "Activity" : "Outdoor",
@@ -209,6 +196,17 @@
     "Price" : "45.00",
     "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d23995839-2_Hour_Seattle_Sailing_Harbor_Tour-Seattle_Washington.html"
   },
+
+
+
+
+
+
+
+
+
+
+
   {
     "City": "Seattle",
     "Activity" : "Restaurant",
@@ -317,13 +315,13 @@
 
 
   {
-  "City": "Denver",
-  "Activity" : "Outdoor",
-  "Name" : "Denver Zoo",
-  "Hours" : "5",
-  "Price" : "22.0",
-  "Website" : "https://denverzoo.org/visit/",
-  "Equipment" : "None"
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Denver Zoo",
+    "Hours" : "5",
+    "Price" : "22.0",
+    "Website" : "https://denverzoo.org/visit/",
+    "Equipment" : "None"
   },
   {
     "City": "Denver",
@@ -405,5 +403,188 @@
     "Price" : "15.0",
     "Website" : "https://www.tripadvisor.com/AttractionProductReview-g33388-d14759343-General_Admission_to_Denver_Botanic_Gardens_Ticket-Denver_Colorado.html",
     "Equipment" : "Camera"
+  },
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Denver Museum of Nature & Science",
+    "Hours": "3",
+    "Price" : "33.0",
+    "Website" : "",
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Denver Art Museum",
+    "Hours": "2",
+    "Price" : "20.0"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Denver Union Station",
+    "Hours": "1",
+    "Price" : ""
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Stranahan's Whiskey Distillery",
+    "Hours": "1.5",
+    "Price" : ""
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Forney Museum of Transportation",
+    "Hours": "2",
+    "Price" : ""
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "United States Mint At Denver",
+    "Hours": "",
+    "Price" : ""
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Downtown Aquarium",
+    "Hours": "",
+    "Price" : ""
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Wings Over the Rockies Air & Space Museum",
+    "Hours": "",
+    "Price" : ""
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "National Ballpark Museum",
+    "Hours": "",
+    "Price" : ""
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Clyfford Still Museum",
+    "Hours": "",
+    "Price" : ""
+  },
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
   }
 ]
