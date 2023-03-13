@@ -12,8 +12,9 @@ class Activity {
     /*
      * CONSTRUCTORS TO ASSIST CHILD CLASSES
      */
-    Activity(){};
+    Activity(){}
     Activity(String city, double hours, double price){
+        setCity(city);
         setHours(hours);
         setPrice(price);
     }
@@ -51,5 +52,12 @@ class Activity {
     }
     public void setWebsite(String website) {
         this.website = website;
+    }
+    public String toString(){
+        return String.format("City: %s\n" +
+                "Hours: %s\n" +
+                "Price Per Person: %s\n" +
+                "Website: %s",
+                getCity(), getHours(), getPrice(), getWebsite());
     }
 }
