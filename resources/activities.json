@@ -136,19 +136,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   {
   "City": "Seattle",
   "Activity" : "Outdoor",
@@ -209,6 +196,17 @@
     "Price" : "45.00",
     "Website" : "https://www.tripadvisor.com/AttractionProductReview-g60878-d23995839-2_Hour_Seattle_Sailing_Harbor_Tour-Seattle_Washington.html"
   },
+
+
+
+
+
+
+
+
+
+
+
   {
     "City": "Seattle",
     "Activity" : "Restaurant",
@@ -217,16 +215,6 @@
     "Price" : "18.95",
     "Website" : "http://pizzeriacredo.com/",
     "Reservations" : "false"
-  },
-  {
-    "City": "Seattle",
-    "Activity" : "Restaurant",
-    "Name" : "",
-    "Hours" : "",
-    "Price" : "",
-    "Website" : "",
-    "Reservations" : "",
-    "Min Age" : ""
   },
   {
     "City": "Seattle",
@@ -301,5 +289,301 @@
     "Price" : "8.88",
     "Website" : "http://www.beechershandmadecheese.com/",
     "Reservations" : "false"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Denver Zoo",
+    "Hours" : "5",
+    "Price" : "22.0",
+    "Website" : "https://denverzoo.org/visit/",
+    "Equipment" : "None"
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Let's Roam Scavenger Hunt Tour",
+    "Hours" : "4",
+    "Price" : "12.99",
+    "Website" : "https://www.letsroam.com/store",
+    "Equipment" : "None"
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Hot Air Balloon Ride",
+    "Hours" : "2",
+    "Price" : "275.0",
+    "Website" : "https://www.coloradoballoonrides.com/",
+    "Equipment" : "None, champagne or sparkling cider is included"
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Centennial Flower Gardens",
+    "Hours" : "1.5",
+    "Price" : "0.0",
+    "Website" : "https://www.denver.org/things-to-do/sports-recreation/city-parks/",
+    "Equipment" : "Camera"
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Discover Rocky Mountain National Park from Denver",
+    "Hours" : "8",
+    "Price" : "139.0",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g33388-d11481680-Discover_Rocky_Mountain_National_Park_from_Denver_or_Boulder-Denver_Colorado.html",
+    "Equipment" : "Water, hiking clothes"
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Small Group Tour of Pikes Peak and Garden of the Gods",
+    "Hours" : "6",
+    "Price" : "149.0",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g33388-d13458068-Small_Group_Tour_of_Pikes_Peak_and_the_Garden_of_the_Gods_from_Denver-Denver_Colora.html",
+    "Equipment" : "Water, hiking clothes"
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Pikes Peak COG Railway & Garden of Gods Tour",
+    "Hours" : "6",
+    "Price" : "220.0",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g33388-d24946816-Pikes_Peak_COG_Railway_Garden_of_Gods_Tour-Denver_Colorado.html",
+    "Equipment" : "Camera"
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Scenic Photoshoot in Denver's Foothills",
+    "Hours" : "1",
+    "Price" : "85.0",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g33388-d19278196-Scenic_Photoshoot_in_Denver_s_Foothills-Denver_Colorado.html",
+    "Equipment" : "None. Photographer will bring all necessary equipment/props."
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "15-Mile Canyon Road Test Drive in a Supercar",
+    "Hours" : ".5",
+    "Price" : "130.0",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g33447-d11763742-15_Mile_Canyon_Road_Test_Drive-Golden_Colorado.html",
+    "Equipment" : "None."
+  },
+  {
+    "City": "Denver",
+    "Activity" : "Outdoor",
+    "Name" : "Denver Botanic Gardens",
+    "Hours" : "3",
+    "Price" : "15.0",
+    "Website" : "https://www.tripadvisor.com/AttractionProductReview-g33388-d14759343-General_Admission_to_Denver_Botanic_Gardens_Ticket-Denver_Colorado.html",
+    "Equipment" : "Camera"
+  },
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Denver Museum of Nature & Science",
+    "Hours": "3",
+    "Price" : "33.0",
+    "Website" : "https://secure1.dmns.org/visit-the-museum"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Denver Art Museum",
+    "Hours": "2",
+    "Price" : "20.0",
+    "Website" : "http://denverartmuseum.org/"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Denver Union Station",
+    "Hours": "1",
+    "Price" : "0.0",
+    "Website" : "http://unionstationindenver.com/"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Stranahan's Whiskey Distillery",
+    "Hours": "1.5",
+    "Price" : "http://www.stranahans.com/tours/",
+    "Website" : "20.0"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Forney Museum of Transportation",
+    "Hours": "2",
+    "Price" : "15.0",
+    "Website" : "https://www.forneymuseum.org/"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "United States Mint At Denver",
+    "Hours": "2",
+    "Price" : "0.0",
+    "Website" : "https://www.usmint.gov/about/mint-tours-facilities/denver/visiting-the-denver-mint"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Downtown Aquarium",
+    "Hours": "3",
+    "Price" : "26.50",
+    "Website" : "https://www.aquariumrestaurants.com/downtownaquariumdenver/visitorInfo.asp"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Wings Over the Rockies Air & Space Museum",
+    "Hours": "3",
+    "Price" : "18.95",
+    "Website" : "https://wingsmuseum.org/exhibits/"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "National Ballpark Museum",
+    "Hours": ".5",
+    "Price" : "20.0",
+    "Website" : "https://ballparkmuseum.com/"
+  },
+  {
+    "City" : "Denver",
+    "Activity" : "Indoor",
+    "Name": "Clyfford Still Museum",
+    "Hours": "2",
+    "Price" : "15.0",
+    "Website" : "https://clyffordstillmuseum.org/"
+  },
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "54thirty Rooftop",
+    "Hours": "2",
+    "Price": "20.0",
+    "Website": "https://www.54thirty.com/?scid=45f93f1b-bd77-45c9-8dab-83b6a417f6fe&y_source=1_ODg2NjcwNy03NjktbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Corinne Restaurant",
+    "Hours": "2.5",
+    "Price": "45.0",
+    "Website": "https://www.corinnedenver.com/?scid=bb1a189a-fec3-4d19-a255-54ba596febe2&y_source=1_Njk1NDY0Ni03NjktbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "Reservations": "true"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Root Down",
+    "Hours": "1",
+    "Price": "25.0",
+    "Website": "http://www.ediblebeats.com/root-down",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Marco's Coal-Fired",
+    "Hours": "1",
+    "Price": "20.0",
+    "Website": "https://www.marcoscfp.com/",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Snooze, an A.M. Eatery",
+    "Hours": "1",
+    "Price": "20.0",
+    "Website": "https://www.snoozeeatery.com/restaurant/colorado/ballpark/?utm_source=ExtNet&utm_medium=Yext",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "The Bagel Deli & Restaurant\n",
+    "Hours": "1",
+    "Price": "15.0",
+    "Website": "http://www.bageldeli.com/",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "",
+    "Hours": "",
+    "Price": "",
+    "Website": "",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Avelina",
+    "Hours": "1",
+    "Price": "25.0",
+    "Website": "http://www.avelinadenver.com/",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Lucile's Creole Cafe",
+    "Hours": "1",
+    "Price": "18.0",
+    "Website": "http://www.luciles.com/denver-location-menu/",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Tacos Tequila Whiskey",
+    "Hours": "1",
+    "Price": "15.0",
+    "Website": "http://tacostequilawhiskey.com/about-us",
+    "Reservations": "false"
   }
 ]
