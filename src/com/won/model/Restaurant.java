@@ -1,6 +1,6 @@
 package com.won.model;
 
-class Restaurant extends Activity{
+public class Restaurant extends Activity{
     /*
      * ATTRIBUTES AND FIELDS
      */
