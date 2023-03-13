@@ -10,8 +10,10 @@ import java.util.Collection;
 class LogicController {
     private Location city;
     private User user;
-    private Activity randomAct;
+    private Activity randomAct = null;
     private Restaurant randomRest;
+
+    private List<Activity> itinerary;
 
     /*
      * The logic controller will utilize the user inputs to pull activity and restaurant from the "database"
@@ -20,39 +22,41 @@ class LogicController {
     /*
      * Activity must be in the location that the user selected and will utilize the budget input from
      * the user to determine whether to pull the activity from the database. Then updateUser.
-     *
      */
-    public void pullActivity() {
-        Collection<Activity> randomAct = new ArrayList<>();
+    String environment = user.getEnvironment();
+    boolean wantRestaurant = user.getWantRestaurant();
+    public void pullActivity(environment, wantRestaurant) {
+        double timeRemain = user.getHours();
+        double moneyRemain = user.getMoney
+        if (environment.equals("indoors")) {
+            activities = user.city.getIndoors();
+        } else if (environment.equals("outdoors")) {
+            activities = user.location.getOudoors();
+        }
 
-        for (Activity randomAct : user.getActivity()) {
-            // activity has to match location and fit in budget
-            if (randomAct.getActvity().equals(getLocation().equals(getPrice()))) {
-
-                result.add(randomAct);
-            }
-            else{
-               // don't think I need to do anything else
-            }
+        if (wantRestaurant) {
+            restaurants = user.location.getRestaurants();
         }
     }
 
-    /*
-     * Restaurant must be in the location that the user selected and will utilize the budget input minus
-     * the expenses from the activity to determine whether to pull the activity from the database.
-     * Will not run if the user does not select "Get food suggestions"
-     */
-    public void pullRestaurant() {
-        for (Restaurant randomRest : database) {
-            // restaurant must fit in budget and be in location
-            if (randomRest.getRestaurant().equals(getLocation().equals(getPrice()))) {
-
-                result.add(randomRest);
+    public void buildItinerary() {
+        double userTime = user.getHours();
+        double userMoney = user.getMoney();
+        while (userTime > 0 && userMoney >0) {
+            while (activities.size() > 0) {
+                Activity activity = getRandomActivity(activities);
+                if (activity.getHours() <= userTime
+                        && activity.getPrice() <= userMoney) {
+                    itinerary.add(activity);
+                    updateUser(activity.getHours(), activity.getPrice());
+                    break;
+                }
+                else activities.remove(activity);
             }
         }
     }
 
     public void updateUser (double hours, double money) {
-        user.updateMoney(randomAct.price + randomAct.hours )
+        user.updateMoney(randomAct.price + randomAct.hours );
     }
 }
