@@ -1,45 +1,91 @@
 package com.won.model;
 
-import java.util.Scanner;
+public class User {
 
-class User {
-    private double budget;
+    private String Name;
+    private double money;
     private double hours;
-    private String location;
+    private Location city;
+    private boolean environment;
+    private boolean restaurant;
 
-    public User(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("How much money do you plan to spend?");
-        budget = scanner.nextDouble();
-        System.out.println("How many hours do you plan to spend?");
-        hours = scanner.nextDouble();
-        System.out.println("Select a city from a following options:?");
-        System.out.println("1. Seattle");
-        System.out.println("2. Denver");
-        String city = scanner.next().toLowerCase();
+    public User() {}
 
-        switch (city) {
-            case "1":
-                city = "Seattle";
-                break;
-            case "2":
-                city = "Denver";
-                break;
-            default:
-                System.out.println("No other choices of city as of now.");
-                break;
-        }
+    public User(String name) {
+        setName(name);
+    }
+
+    public User(String name, double money) {
+        this(name);
+        setMoney(money);
+    }
+
+    public User(String name, double money, double hours) {
+        this(name,money);
+        setHours(hours);
+    }
+
+    public User(String name, double money, double hours, Location city) {
+        this(name,money,hours);
+        setCity(city);
+    }
+
+    public User(String name, double money, double hours, Location city, boolean environment) {
+        this(name,money,hours,city);
+        setEnvironment(environment);
+    }
+
+    public User(String name, double money, double hours, Location city, boolean environment, boolean restaurant) {
+        this(name,money,hours,city,environment);
+        setEnvironment(environment);
+        setRestaurant(restaurant);
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
     public double getMoney() {
-        return budget;
+        return money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
     }
 
     public double getHours() {
         return hours;
     }
 
-    public String getLocation() {
-        return location;
+    public void setHours(double hours) {
+        this.hours = hours;
+    }
+
+    public Location getCity() {
+        return city;
+    }
+
+    public void setCity(Location city) {
+        this.city = city;
+    }
+
+    public boolean isEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(boolean environment) {
+        this.environment = environment;
+    }
+
+    public boolean isRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(boolean restaurant) {
+        this.restaurant = restaurant;
     }
 }
