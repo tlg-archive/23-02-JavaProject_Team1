@@ -12,11 +12,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-class ActivityFactory {
+public class ActivityFactory {
 
 
 
-    void loadJSON(String city) throws IOException, ParseException {
+    public void loadJSON(String city) throws IOException, ParseException {
         Object o = new JSONParser().parse(new FileReader(String.valueOf(Path.of("resources/activities.json"))));
         JSONArray jsonArray = (JSONArray) o;
         for (var i : jsonArray){

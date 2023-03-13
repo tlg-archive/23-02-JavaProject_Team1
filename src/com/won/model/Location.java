@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-class Location {
+public class Location {
     /*
      * ATTRIBUTES AND FIELDS
      */
