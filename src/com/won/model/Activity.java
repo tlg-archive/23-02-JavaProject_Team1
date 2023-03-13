@@ -1,6 +1,6 @@
 package com.won.model;
 
-class Activity {
+public class Activity {
     /*
      * COMMON ATTRIBUTES BETWEEN ALL ACTIVITIES
      */

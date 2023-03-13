@@ -27,7 +27,7 @@ class LogicController {
     boolean wantRestaurant = user.getWantRestaurant();
     public void pullActivity(environment, wantRestaurant) {
         double timeRemain = user.getHours();
-        double moneyRemain = user.getMoney
+        double moneyRemain = user.getMoney();
         if (environment.equals("indoors")) {
             activities = user.city.getIndoors();
         } else if (environment.equals("outdoors")) {
