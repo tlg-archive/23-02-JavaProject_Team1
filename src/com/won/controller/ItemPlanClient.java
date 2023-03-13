@@ -10,6 +10,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
+import com.apps.util.Prompter;
+import com.won.model.ActivityFactory;
+import com.won.model.User;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
+import java.util.Scanner;
+
 class ItemPlanClient {
     Prompter prompter = new Prompter(new Scanner(System.in));
     User user = new User();
