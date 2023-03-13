@@ -421,70 +421,79 @@
     "Name": "Denver Museum of Nature & Science",
     "Hours": "3",
     "Price" : "33.0",
-    "Website" : "",
+    "Website" : "https://secure1.dmns.org/visit-the-museum"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "Denver Art Museum",
     "Hours": "2",
-    "Price" : "20.0"
+    "Price" : "20.0",
+    "Website" : "http://denverartmuseum.org/"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "Denver Union Station",
     "Hours": "1",
-    "Price" : ""
+    "Price" : "0.0",
+    "Website" : "http://unionstationindenver.com/"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "Stranahan's Whiskey Distillery",
     "Hours": "1.5",
-    "Price" : ""
+    "Price" : "http://www.stranahans.com/tours/",
+    "Website" : "20.0"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "Forney Museum of Transportation",
     "Hours": "2",
-    "Price" : ""
+    "Price" : "15.0",
+    "Website" : "https://www.forneymuseum.org/"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "United States Mint At Denver",
-    "Hours": "",
-    "Price" : ""
+    "Hours": "2",
+    "Price" : "0.0",
+    "Website" : "https://www.usmint.gov/about/mint-tours-facilities/denver/visiting-the-denver-mint"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "Downtown Aquarium",
-    "Hours": "",
-    "Price" : ""
+    "Hours": "3",
+    "Price" : "26.50",
+    "Website" : "https://www.aquariumrestaurants.com/downtownaquariumdenver/visitorInfo.asp"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "Wings Over the Rockies Air & Space Museum",
-    "Hours": "",
-    "Price" : ""
+    "Hours": "3",
+    "Price" : "18.95",
+    "Website" : "https://wingsmuseum.org/exhibits/"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "National Ballpark Museum",
-    "Hours": "",
-    "Price" : ""
+    "Hours": ".5",
+    "Price" : "20.0",
+    "Website" : "https://ballparkmuseum.com/"
   },
   {
     "City" : "Denver",
     "Activity" : "Indoor",
     "Name": "Clyfford Still Museum",
-    "Hours": "",
-    "Price" : ""
+    "Hours": "2",
+    "Price" : "15.0",
+    "Website" : "https://clyffordstillmuseum.org/"
   },
 
 
@@ -500,10 +509,55 @@
   {
     "City": "Denver",
     "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
+    "Name": "54thirty Rooftop",
+    "Hours": "2",
+    "Price": "20.0",
+    "Website": "https://www.54thirty.com/?scid=45f93f1b-bd77-45c9-8dab-83b6a417f6fe&y_source=1_ODg2NjcwNy03NjktbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Corinne Restaurant",
+    "Hours": "2.5",
+    "Price": "45.0",
+    "Website": "https://www.corinnedenver.com/?scid=bb1a189a-fec3-4d19-a255-54ba596febe2&y_source=1_Njk1NDY0Ni03NjktbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "Reservations": "true"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Root Down",
+    "Hours": "1",
+    "Price": "25.0",
+    "Website": "http://www.ediblebeats.com/root-down",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Marco's Coal-Fired",
+    "Hours": "1",
+    "Price": "20.0",
+    "Website": "https://www.marcoscfp.com/",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "Snooze, an A.M. Eatery",
+    "Hours": "1",
+    "Price": "20.0",
+    "Website": "https://www.snoozeeatery.com/restaurant/colorado/ballpark/?utm_source=ExtNet&utm_medium=Yext",
+    "Reservations": "false"
+  },
+  {
+    "City": "Denver",
+    "Activity": "Restaurant",
+    "Name": "The Bagel Deli & Restaurant\n",
+    "Hours": "1",
+    "Price": "15.0",
+    "Website": "http://www.bageldeli.com/",
     "Reservations": "false"
   },
   {
@@ -518,73 +572,28 @@
   {
     "City": "Denver",
     "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
+    "Name": "Avelina",
+    "Hours": "1",
+    "Price": "25.0",
+    "Website": "http://www.avelinadenver.com/",
     "Reservations": "false"
   },
   {
     "City": "Denver",
     "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
+    "Name": "Lucile's Creole Cafe",
+    "Hours": "1",
+    "Price": "18.0",
+    "Website": "http://www.luciles.com/denver-location-menu/",
     "Reservations": "false"
   },
   {
     "City": "Denver",
     "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
-    "Reservations": "false"
-  },
-  {
-    "City": "Denver",
-    "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
-    "Reservations": "false"
-  },
-  {
-    "City": "Denver",
-    "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
-    "Reservations": "false"
-  },
-  {
-    "City": "Denver",
-    "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
-    "Reservations": "false"
-  },
-  {
-    "City": "Denver",
-    "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
-    "Reservations": "false"
-  },
-  {
-    "City": "Denver",
-    "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
+    "Name": "Tacos Tequila Whiskey",
+    "Hours": "1",
+    "Price": "15.0",
+    "Website": "http://tacostequilawhiskey.com/about-us",
     "Reservations": "false"
   }
 ]
