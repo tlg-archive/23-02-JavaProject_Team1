@@ -19,27 +19,37 @@ class ItemPlanClient {
 
 
     protected void gameLoop() {
+        requestName();
+        String city = prompter.prompt("Please choose a city from the following list:" +
+                "\n1. Seattle\n2. Denver\nEnter your choice (1 or 2):");
+        city = city.trim();
+        switch (city) {
+            case "1":
+                requestLocation("Seattle");
+                break;
+            case "2":
+                requestLocation("Denver");
+                break;
+            default:
+                prompter.prompt("Invalid choice. Please choose again (1 or 2)");
+        }
         /*
          * FOR TESTING::::
          */
-        requestLocation("Seattle");
-        user.setHours(10.0);
-        user.setMoney(100.0);
-        user.setEnvironment(true);
-        user.setRestaurant(true);
-//        requestName();
-//        String location = prompter.prompt("What city would you like to visit?");
-//        requestLocation(location);
-//        requestSpendLimit();
-//        requestEnvironment();
-//        requestRestaurant();
-//        requestPartySize();
-        List<? extends Activity> itinerary= logicController.buildItinerary(user);
+//        requestLocation("Seattle");
+//        user.setHours(10.0);
+//        user.setMoney(100.0);
+//        user.setEnvironment(true);
+//        user.setRestaurant(true);
+        requestLocation(city);
+        requestSpendLimit();
+        requestEnvironment();
+        requestRestaurant();
+        requestPartySize();
+        List<? extends Activity> itinerary = logicController.buildItinerary(user);
         displayResult(itinerary);
         requestWebsites(itinerary);
     }
-
-
 
 
     private void requestName() {
@@ -56,10 +66,10 @@ class ItemPlanClient {
         }
     }
 
-    private void requestLocation(String location) {
+    private void requestLocation(String city) {
         ActivityFactory activityFactory = new ActivityFactory();
         try {
-            activityFactory.loadJSON(location);
+            activityFactory.loadJSON(city);
             user.setCity(Location.getInstance());
         } catch (IOException | ParseException e) {
             e.printStackTrace();
@@ -67,17 +77,17 @@ class ItemPlanClient {
     }
 
     private void requestSpendLimit() {
-        double money = Double.parseDouble(prompter.prompt("How much are you willing ot spend total?"));
+        double money = Double.parseDouble(prompter.prompt("what is your budget?"));
         user.setMoney(money);
     }
 
     private void requestEnvironment() {
         while (true) {
             String environment = prompter.prompt("Would you like to be [I]nside or [O]utside?");
-            if (environment.equalsIgnoreCase("I")) {
+            if (environment.trim().equalsIgnoreCase("I")) {
                 user.setEnvironment(true);
                 return;
-            } else if (environment.equalsIgnoreCase("O")) {
+            } else if (environment.trim().equalsIgnoreCase("O")) {
                 user.setEnvironment(false);
                 return;
             } else {
@@ -89,10 +99,10 @@ class ItemPlanClient {
     private void requestRestaurant() {
         while (true) {
             String restaurant = prompter.prompt("Are you planning to visit a restaurant? (Y/N)");
-            if (restaurant.equalsIgnoreCase("Y")) {
+            if (restaurant.trim().equalsIgnoreCase("Y")) {
                 user.setRestaurant(true);
                 return;
-            } else if (restaurant.equalsIgnoreCase("N")) {
+            } else if (restaurant.trim().equalsIgnoreCase("N")) {
                 user.setRestaurant(false);
                 return;
             } else {
@@ -100,11 +110,12 @@ class ItemPlanClient {
             }
         }
     }
+
     private void requestPartySize() {
-        while(true){
+        while (true) {
             String party = prompter.prompt("How many people(including yourself) will you be paying for?");
             try {
-                int partySize = Integer.parseInt(party);
+                int partySize = Integer.parseInt(party.trim());
                 user.setPartySize(partySize);
                 return;
             } catch (NumberFormatException e) {
@@ -115,7 +126,7 @@ class ItemPlanClient {
 
     void displayResult(List<? extends Activity> itinerary) {
         //TODO: Make pretty!!! Table?
-        if (itinerary.isEmpty()){
+        if (itinerary.isEmpty()) {
             System.out.println("Unfortunately, there is currently no available activites based on your critieria");
         }
         itinerary.forEach(System.out::println);
