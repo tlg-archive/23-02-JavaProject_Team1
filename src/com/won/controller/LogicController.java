@@ -32,6 +32,8 @@ class LogicController {
     public List<? extends Activity> buildItinerary(User user) {
         pullActivity(user);
         List<Activity> itinerary = new ArrayList<>();
+        //TODO: Combine activities and restaurants into one list and request instanceof
+        // Perhaps have the Location class conduct the randomizer.
         while (!activities.isEmpty() && !restaurants.isEmpty()) {
             chooseRandomActivity(user,itinerary);
             chooseRandomRestaurant(user,itinerary);

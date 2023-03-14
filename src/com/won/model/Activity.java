@@ -8,18 +8,20 @@ public class Activity {
     private double hours;
     private double price;
     private String website;
+    private String actName;
 
     /*
      * CONSTRUCTORS TO ASSIST CHILD CLASSES
      */
     Activity(){}
-    Activity(String city, double hours, double price){
+    Activity(String actName, String city, double hours, double price){
+        setActName(actName);
         setCity(city);
         setHours(hours);
         setPrice(price);
     }
-    Activity(String city, double hours, double price, String website){
-        this(city, hours, price);
+    Activity(String actName, String city, double hours, double price, String website){
+        this(actName, city, hours, price);
         setWebsite(website);
     }
 
@@ -53,11 +55,17 @@ public class Activity {
     public void setWebsite(String website) {
         this.website = website;
     }
+    public String getActName(){
+        return this.actName;
+    }
+    public void setActName(String actName){
+        this.actName = actName;
+    }
     public String toString(){
-        return String.format("City: %s\n" +
+        return String.format("Attraction: %s\n" +
                 "Hours: %s\n" +
                 "Price Per Person: %s\n" +
-                "Website: %s",
-                getCity(), getHours(), getPrice(), getWebsite());
+                "Website: %s\n\n\n",
+                getActName(), getHours(), getPrice(), getWebsite());
     }
 }
