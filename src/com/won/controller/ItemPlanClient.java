@@ -19,23 +19,24 @@ class ItemPlanClient {
 
 
     protected void gameLoop() {
-        requestName();
-        String location = prompter.prompt("What city would you like to visit?");
         /*
          * FOR TESTING::::
          */
-//        requestLocation("Seattle");
-//        user.setHours(10.0);
-//        user.setMoney(100.0);
-//        user.setEnvironment(true);
-//        user.setRestaurant(true);
-        requestLocation(location);
-        requestSpendLimit();
-        requestEnvironment();
-        requestRestaurant();
-        requestPartySize();
+        requestLocation("Seattle");
+        user.setHours(10.0);
+        user.setMoney(100.0);
+        user.setEnvironment(true);
+        user.setRestaurant(true);
+//        requestName();
+//        String location = prompter.prompt("What city would you like to visit?");
+//        requestLocation(location);
+//        requestSpendLimit();
+//        requestEnvironment();
+//        requestRestaurant();
+//        requestPartySize();
         List<? extends Activity> itinerary= logicController.buildItinerary(user);
         displayResult(itinerary);
+        requestWebsites(itinerary);
     }
 
 
@@ -125,6 +126,33 @@ class ItemPlanClient {
     /*
      * TODO:  Will need a launchBrowser(String url) method.
      *    -- Check for OS with System.getProperty("os.name").toLowerCase() into process builder
+     *    -- If windows: start "https://wwww.google.com"
      */
+    private void requestWebsites(List<? extends Activity> itinerary){
+        while(true){
+            String goToWeb = prompter.prompt("Would you like to visit the websites? (Y/N)");
+            try {
+                if (goToWeb.equalsIgnoreCase("Y")) {
+                    itinerary.forEach(a -> launchBrowser(a.getWebsite()));
+                }
+                return;
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
+    private void launchBrowser(String url){
+//        String os = System.getProperty("os.name").toLowerCase();
+//        ProcessBuilder process = (os.contains("windows")) ?
+//                new ProcessBuilder("start ", url) :
+//                new ProcessBuilder("open ", url);
+//                process.inheritIO().command("start " + url);
+
+        try {
+            Runtime.getRuntime().exec("explorer " + url);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
