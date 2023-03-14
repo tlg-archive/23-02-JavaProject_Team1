@@ -25,7 +25,6 @@ class LogicController {
         if (user.isRestaurant()) {
             restaurants = user.getCity().getRestaurantActivities();
         }
-//        activities = (user.isEnvironment()) ? user.getCity().getIndoorActivities() : user.getCity().getOutdoorActivities();
         return activities = (user.isEnvironment()) ? user.getCity().getIndoorActivities() : user.getCity().getOutdoorActivities();
     }
 
@@ -35,7 +34,7 @@ class LogicController {
         //TODO: Combine activities and restaurants into one list and request instanceof
         // Perhaps have the Location class conduct the randomizer.
         while (!activities.isEmpty() && !restaurants.isEmpty()) {
-            chooseRandomActivity(user,itinerary);
+            chooseRandomActivity(user,itinerary); // TODO: <---- shoved from Location.java
             chooseRandomRestaurant(user,itinerary);
         }
         return itinerary;
