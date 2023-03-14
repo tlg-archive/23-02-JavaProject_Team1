@@ -2,11 +2,11 @@ package com.won.model;
 
 import java.util.List;
 
-class Outdoor extends Activity{
+public class Outdoor extends Activity{
     /*
      * ATTRIBUTES AND FIELDS
      */
-    private List<String> equipmentRequired;
+    private String equipmentRequired;
 
     /*
      * CONSTRUCTORS
@@ -17,19 +17,15 @@ class Outdoor extends Activity{
     Outdoor(String city, double hours, double price, String website){
         super(city, hours, price, website);
     }
-    private Outdoor(String city, double hours, double price, List<String> equipmentRequired){
-        super(city, hours, price);
-        setEquipmentRequired(equipmentRequired);
-    }
-    private Outdoor(String city, double hours, double price, String website, List<String> equipmentRequired){
+    private Outdoor(String city, double hours, double price, String website, String equipmentRequired){
         super(city, hours, price, website);
         setEquipmentRequired(equipmentRequired);
     }
 
-    public List<String> getEquipmentRequired() {
+    public String getEquipmentRequired() {
         return equipmentRequired;
     }
-    public void setEquipmentRequired(List<String> equipmentRequired) {
+    public void setEquipmentRequired(String equipmentRequired) {
         this.equipmentRequired = equipmentRequired;
     }
 }

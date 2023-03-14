@@ -1,6 +1,6 @@
 package com.won.model;
 
-class Indoor extends Activity{
+public class Indoor extends Activity{
  /*
   * INDOOR SPECIFIC ATTRIBUTES
   */

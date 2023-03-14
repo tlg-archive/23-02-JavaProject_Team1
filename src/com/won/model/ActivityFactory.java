@@ -43,7 +43,7 @@ public class ActivityFactory {
             case "Outdoor":
                 return (website != null) ? new Outdoor(city, hours, price, website) : new Outdoor(city, hours, price);
             case "Restaurant":
-                boolean reservationRequired = (Boolean) j.get("Reservation Required");
+                boolean reservationRequired = Boolean.parseBoolean((String) j.get("Reservations"));
                 return (website != null) ? new Restaurant(city, hours, price, website, reservationRequired)
                         : new Restaurant(city, hours, price, reservationRequired);
             default:
@@ -64,8 +64,8 @@ public class ActivityFactory {
                 ((Indoor) a).setCapacity(capacity);
             }
         } else if (a instanceof Outdoor){
-            List<String> equipment;
-            equipment = j.containsKey("Equipment") ? (List<String>) j.get("Equipment") : null;
+            String equipment;
+            equipment = j.containsKey("Equipment") ? (String) j.get("Equipment") : null;
             if (equipment != null) ((Outdoor) a).setEquipmentRequired(equipment);
         } else if (a instanceof Restaurant){
             Integer minAge;
@@ -77,7 +77,6 @@ public class ActivityFactory {
     }
     private void collectActivity(Activity a){
         if(a instanceof Indoor){
-            System.out.println(a);
             Location.getInstance().addIndoor((Indoor) a);
         } else if(a instanceof Outdoor){
             Location.getInstance().addOutdoor((Outdoor) a);

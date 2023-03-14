@@ -1,17 +1,15 @@
 package com.won.model;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class Location {
     /*
      * ATTRIBUTES AND FIELDS
      */
-    private Collection<Indoor> indoorActivities = new ArrayList<>();
-    private Collection<Outdoor> outdoorActivities = new ArrayList<>();
-    private Collection<Restaurant> restaurantActivities = new ArrayList<>();
+    private List<Indoor> indoorActivities = new ArrayList<>();
+    private List<Outdoor> outdoorActivities = new ArrayList<>();
+    private List<Activity> restaurantActivities = new ArrayList<Activity>();
 
     /*
      * CONSTRUCTORS ---- MAKING SINGLETON
@@ -31,7 +29,6 @@ public class Location {
      */
     public void addIndoor(Indoor a){
         indoorActivities.add(a);
-        System.out.println(indoorActivities);
     }
     public void addOutdoor(Outdoor a){
         outdoorActivities.add(a);
@@ -45,13 +42,13 @@ public class Location {
     /*
      * GETTER ONLY
      */
-    public Collection<Indoor> getIndoorActivities() {
+    public List<Indoor> getIndoorActivities() {
         return indoorActivities;
     }
-    public Collection<Outdoor> getOutdoorActivities() {
+    public List<Outdoor> getOutdoorActivities() {
         return outdoorActivities;
     }
-    public Collection<Restaurant> getRestaurantActivities() {
+    public List<Activity> getRestaurantActivities() {
         return restaurantActivities;
     }
 

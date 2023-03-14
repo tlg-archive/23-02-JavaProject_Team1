@@ -1,39 +1,55 @@
 package com.won.controller;
 
 import com.apps.util.Prompter;
+import com.won.model.Activity;
 import com.won.model.ActivityFactory;
 import com.won.model.Location;
 import com.won.model.User;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 
 class ItemPlanClient {
     Prompter prompter = new Prompter(new Scanner(System.in));
     User user = new User();
+    LogicController logicController = new LogicController();
 
-    private String getName() {
+
+    protected void gameLoop() {
+//        requestName();
+//        String location = prompter.prompt("What city would you like to visit?");
+        /*
+         * FOR TESTING::::
+         */
+        requestLocation("Seattle");
+        user.setHours(10.0);
+        user.setMoney(100.0);
+        user.setEnvironment(true);
+        user.setRestaurant(true);
+//        requestLocation(location);
+//        requestSpendLimit();
+//        requestEnvironment();
+//        requestRestaurant();
+        List<? extends Activity> itinerary= logicController.buildItinerary(user);
+        displayResult(itinerary);
+    }
+
+
+    private void requestName() {
         // Prompt the user for the name
         while (true) {
             String name = prompter.prompt("Please enter your name:");
             // Test if name is a valid input
             if (name != null && !name.trim().isEmpty()) {
-                return name;
+                user.setName(name);
+                return;
             } else {
                 System.out.println("Invalid input. Please try again.");
             }
         }
-    }
-
-    private User gameLoop(String name) {
-        String location = prompter.prompt("What city would you like to visit?");
-        requestLocation(location);
-        requestSpendLimit();
-        requestEnvironment();
-        requestRestaurant();
-        return user;
     }
 
     private void requestLocation(String location) {
@@ -56,8 +72,10 @@ class ItemPlanClient {
             String environment = prompter.prompt("Would you like to be [I]nside or [O]utside?");
             if (environment.equalsIgnoreCase("I")) {
                 user.setEnvironment(true);
+                return;
             } else if (environment.equalsIgnoreCase("O")) {
                 user.setEnvironment(false);
+                return;
             } else {
                 System.out.println("Invalid input. Please try again.");
             }
@@ -79,8 +97,8 @@ class ItemPlanClient {
         }
     }
 
-    void displayResult() {
-        //Take itenerary given by logic class and loop through to display neatly.
+    void displayResult(List<? extends Activity> itinerary) {
+        System.out.println(itinerary);
     }
 
     //TODO: requestFinalize() {

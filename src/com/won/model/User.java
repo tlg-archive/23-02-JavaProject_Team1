@@ -4,7 +4,7 @@ public class User {
 
     private String Name;
     private double money;
-    private double hours;
+    private double hours = 10.0;
     private Location city;
     private boolean environment;
     private boolean restaurant;

@@ -253,16 +253,7 @@
     "Website" : "http://www.spinasse.com/",
     "Reservations" : "true"
   },
-  {
-    "City": "Seattle",
-    "Activity" : "Restaurant",
-    "Name" : "",
-    "Hours" : "",
-    "Price" : "",
-    "Website" : "",
-    "Reservations" : "",
-    "Min Age" : ""
-  },
+
   {
     "City": "Seattle",
     "Activity" : "Restaurant",
@@ -434,8 +425,8 @@
     "Activity" : "Indoor",
     "Name": "Stranahan's Whiskey Distillery",
     "Hours": "1.5",
-    "Price" : "http://www.stranahans.com/tours/",
-    "Website" : "20.0"
+    "Website" : "http://www.stranahans.com/tours/",
+    "Price" : "20.0"
   },
   {
     "City" : "Denver",
@@ -548,15 +539,6 @@
     "Hours": "1",
     "Price": "15.0",
     "Website": "http://www.bageldeli.com/",
-    "Reservations": "false"
-  },
-  {
-    "City": "Denver",
-    "Activity": "Restaurant",
-    "Name": "",
-    "Hours": "",
-    "Price": "",
-    "Website": "",
     "Reservations": "false"
   },
   {
