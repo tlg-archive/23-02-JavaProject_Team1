@@ -1,9 +1,14 @@
 package com.won.model;
 
+import com.won.model.activity.Activity;
+import com.won.model.activity.Indoor;
+import com.won.model.activity.Outdoor;
+import com.won.model.activity.Restaurant;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Location {
+public class ActivityDB {
     /*
      * ATTRIBUTES AND FIELDS
      */
@@ -15,13 +20,13 @@ public class Location {
     /*
      * CONSTRUCTORS ---- MAKING SINGLETON
      */
-    private static Location location = null;
-    private Location() {
+    private static ActivityDB activityDB = null;
+    private ActivityDB() {
     }
-    public static synchronized Location getInstance()
+    public static synchronized ActivityDB getInstance()
     {
-        if(location == null) location = new Location();
-        return location;
+        if(activityDB == null) activityDB = new ActivityDB();
+        return activityDB;
     }
 
 

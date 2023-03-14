@@ -1,4 +1,4 @@
-package com.won.model;
+package com.won.model.activity;
 
 public class Indoor extends Activity{
  /*

@@ -1,10 +1,10 @@
 package com.won.controller;
 
 import com.apps.util.Prompter;
-import com.won.model.Activity;
+import com.won.model.activity.Activity;
 import com.won.model.ActivityFactory;
-import com.won.model.Location;
-import com.won.model.User;
+import com.won.model.ActivityDB;
+import com.won.model.user.User;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -12,13 +12,13 @@ import java.util.List;
 import java.util.Scanner;
 
 
-class ItemPlanClient {
+public class UserPrompter {
     Prompter prompter = new Prompter(new Scanner(System.in));
     User user = new User();
-    LogicController logicController = new LogicController();
+    Controller controller = new Controller();
 
 
-    protected void gameLoop() {
+    public void gameLoop() {
         requestName();
         String location = prompter.prompt("What city would you like to visit?");
         /*
@@ -34,7 +34,7 @@ class ItemPlanClient {
         requestEnvironment();
         requestRestaurant();
         requestPartySize();
-        List<? extends Activity> itinerary= logicController.buildItinerary(user);
+        List<? extends Activity> itinerary= controller.buildItinerary(user);
         displayResult(itinerary);
     }
 
@@ -59,7 +59,7 @@ class ItemPlanClient {
         ActivityFactory activityFactory = new ActivityFactory();
         try {
             activityFactory.loadJSON(location);
-            user.setCity(Location.getInstance());
+            user.setCity(ActivityDB.getInstance());
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

@@ -1,14 +1,15 @@
 package com.won.controller;
 
-import com.won.model.*;
+import com.won.model.activity.Activity;
+import com.won.model.activity.Restaurant;
+import com.won.model.user.User;
 
 import java.util.List;
 import java.util.Random;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
-class LogicController {
+class Controller {
     private List<Activity> restaurants = new ArrayList<>();
     private List<? extends Activity> activities = new ArrayList<>();
 
@@ -22,11 +23,11 @@ class LogicController {
      */
 
     public List<? extends Activity> pullActivity(User user) {
-        if (user.isRestaurant()) {
+        if (user.wantRestaurant()) {
             restaurants = user.getCity().getRestaurantActivities();
         }
 //        activities = (user.isEnvironment()) ? user.getCity().getIndoorActivities() : user.getCity().getOutdoorActivities();
-        return activities = (user.isEnvironment()) ? user.getCity().getIndoorActivities() : user.getCity().getOutdoorActivities();
+        return activities = (user.isIndoors()) ? user.getCity().getIndoorActivities() : user.getCity().getOutdoorActivities();
     }
 
     public List<? extends Activity> buildItinerary(User user) {

@@ -1,6 +1,4 @@
-package com.won.model;
-
-import java.util.List;
+package com.won.model.activity;
 
 public class Outdoor extends Activity{
     /*
