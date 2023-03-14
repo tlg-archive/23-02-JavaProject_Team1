@@ -76,7 +76,7 @@ class ItemPlanClient {
     }
 
     private void requestSpendLimit() {
-        double money = Double.parseDouble(prompter.prompt("How much are you willing ot spend total?"));
+        double money = Double.parseDouble(prompter.prompt("what is your budget?"));
         user.setMoney(money);
     }
 
