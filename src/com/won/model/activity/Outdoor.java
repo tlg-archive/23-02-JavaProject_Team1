@@ -1,8 +1,8 @@
-package com.won.model;
+package com.won.model.activity;
 
-import java.util.List;
+import com.won.model.activity.Activity;
 
-public class Outdoor extends Activity{
+public class Outdoor extends Activity {
     /*
      * ATTRIBUTES AND FIELDS
      */
@@ -14,7 +14,7 @@ public class Outdoor extends Activity{
     Outdoor(String actName, String city, double hours, double price){
         super(actName, city, hours, price);
     }
-    Outdoor(String actName, String city, double hours, double price, String website){
+    public Outdoor(String actName, String city, double hours, double price, String website){
         super(actName, city, hours, price, website);
     }
     private Outdoor(String actName, String city, double hours, double price, String website, String equipmentRequired){

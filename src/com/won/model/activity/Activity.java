@@ -1,4 +1,4 @@
-package com.won.model;
+package com.won.model.activity;
 
 public class Activity {
     /*
@@ -13,7 +13,7 @@ public class Activity {
     /*
      * CONSTRUCTORS TO ASSIST CHILD CLASSES
      */
-    Activity(){}
+    public Activity(){}
     Activity(String actName, String city, double hours, double price){
         setActName(actName);
         setCity(city);

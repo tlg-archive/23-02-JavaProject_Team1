@@ -1,12 +1,13 @@
-package com.won.model;
+package com.won.model.db;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.List;
 
+import com.won.model.activity.Activity;
+import com.won.model.activity.Indoor;
+import com.won.model.activity.Outdoor;
+import com.won.model.activity.Restaurant;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -78,11 +79,11 @@ public class ActivityFactory {
     }
     private void collectActivity(Activity a){
         if(a instanceof Indoor){
-            Location.getInstance().addIndoor((Indoor) a);
+            ActivityDB.getInstance().addIndoor((Indoor) a);
         } else if(a instanceof Outdoor){
-            Location.getInstance().addOutdoor((Outdoor) a);
+            ActivityDB.getInstance().addOutdoor((Outdoor) a);
         } else {
-            Location.getInstance().addRestaurantActivities((Restaurant) a);
+            ActivityDB.getInstance().addRestaurantActivities((Restaurant) a);
         }
     }
 }

@@ -1,6 +1,8 @@
-package com.won.model;
+package com.won.model.activity;
 
-public class Restaurant extends Activity{
+import com.won.model.activity.Activity;
+
+public class Restaurant extends Activity {
     /*
      * ATTRIBUTES AND FIELDS
      */
@@ -10,11 +12,11 @@ public class Restaurant extends Activity{
     /*
      * CONSTRUCTORS
      */
-    Restaurant(String actName, String city, double hours, double price, boolean reservationRequired){
+    public Restaurant(String actName, String city, double hours, double price, boolean reservationRequired){
         super(actName, city, hours, price);
         setReservationRequired(reservationRequired);
     }
-    Restaurant(String actName, String city, double hours, double price, String website, boolean reservationRequired){
+    public Restaurant(String actName, String city, double hours, double price, String website, boolean reservationRequired){
         super(actName, city, hours, price, website);
         setReservationRequired(reservationRequired);
     }

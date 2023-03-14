@@ -1,6 +1,8 @@
-package com.won.model;
+package com.won.model.activity;
 
-public class Indoor extends Activity{
+import com.won.model.activity.Activity;
+
+public class Indoor extends Activity {
  /*
   * INDOOR SPECIFIC ATTRIBUTES
   */
@@ -13,7 +15,7 @@ public class Indoor extends Activity{
     Indoor(String actName, String city, double hours, double price){
         super(actName, city, hours, price);
     }
-    Indoor(String actName, String city, double hours, double price, String website){
+    public Indoor(String actName, String city, double hours, double price, String website){
         super(actName, city, hours, price, website);
     }
     private Indoor(String actName, String city, double hours, double price, int minAge){

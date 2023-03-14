@@ -1,4 +1,6 @@
-package com.won.model;
+package com.won.model.user;
+
+import com.won.model.Location;
 
 public class User {
 
