@@ -8,7 +8,7 @@ import com.won.model.activity.Restaurant;
 import java.util.ArrayList;
 import java.util.List;
 
-class ActivityDB {
+public class ActivityDB {
     /*
      * ATTRIBUTES AND FIELDS
      */

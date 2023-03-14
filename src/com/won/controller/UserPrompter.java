@@ -2,8 +2,8 @@ package com.won.controller;
 
 import com.apps.util.Prompter;
 import com.won.model.activity.Activity;
+import com.won.model.db.ActivityDB;
 import com.won.model.db.ActivityFactory;
-import com.won.model.Location;
 import com.won.model.user.User;
 import org.json.simple.parser.ParseException;
 
@@ -70,7 +70,7 @@ public class UserPrompter {
         ActivityFactory activityFactory = new ActivityFactory();
         try {
             activityFactory.loadJSON(city);
-            user.setCity(Location.getInstance());
+            user.setCity(ActivityDB.getInstance());
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

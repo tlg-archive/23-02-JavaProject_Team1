@@ -1,13 +1,13 @@
 package com.won.model.user;
 
-import com.won.model.Location;
+import com.won.model.db.ActivityDB;
 
 public class User {
 
     private String Name;
     private double money;
     private double hours = 10.0;
-    private Location city;
+    private ActivityDB city;
     private boolean environment;
     private boolean restaurant;
     private int partySize;
@@ -28,17 +28,17 @@ public class User {
         setHours(hours);
     }
 
-    public User(String name, double money, double hours, Location city) {
+    public User(String name, double money, double hours, ActivityDB city) {
         this(name,money,hours);
         setCity(city);
     }
 
-    public User(String name, double money, double hours, Location city, boolean environment) {
+    public User(String name, double money, double hours, ActivityDB city, boolean environment) {
         this(name,money,hours,city);
         setEnvironment(environment);
     }
 
-    public User(String name, double money, double hours, Location city, boolean environment, boolean restaurant) {
+    public User(String name, double money, double hours, ActivityDB city, boolean environment, boolean restaurant) {
         this(name,money,hours,city,environment);
         setEnvironment(environment);
         setRestaurant(restaurant);
@@ -68,11 +68,11 @@ public class User {
         this.hours = hours;
     }
 
-    public Location getCity() {
+    public ActivityDB getCity() {
         return city;
     }
 
-    public void setCity(Location city) {
+    public void setCity(ActivityDB city) {
         this.city = city;
     }
 

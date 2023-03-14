@@ -12,7 +12,7 @@ public class Indoor extends Activity {
     /*
      * CONSTRUCTORS
      */
-    Indoor(String actName, String city, double hours, double price){
+    public Indoor(String actName, String city, double hours, double price){
         super(actName, city, hours, price);
     }
     public Indoor(String actName, String city, double hours, double price, String website){

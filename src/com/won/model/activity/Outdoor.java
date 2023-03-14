@@ -11,7 +11,7 @@ public class Outdoor extends Activity {
     /*
      * CONSTRUCTORS
      */
-    Outdoor(String actName, String city, double hours, double price){
+    public Outdoor(String actName, String city, double hours, double price){
         super(actName, city, hours, price);
     }
     public Outdoor(String actName, String city, double hours, double price, String website){
