@@ -10,27 +10,27 @@ public class Indoor extends Activity{
     /*
      * CONSTRUCTORS
      */
-    Indoor(String city, double hours, double price){
-        super(city, hours, price);
+    Indoor(String actName, String city, double hours, double price){
+        super(actName, city, hours, price);
     }
-    Indoor(String city, double hours, double price, String website){
-        super(city, hours, price, website);
+    Indoor(String actName, String city, double hours, double price, String website){
+        super(actName, city, hours, price, website);
     }
-    private Indoor(String city, double hours, double price, int minAge){
-        super(city, hours, price);
+    private Indoor(String actName, String city, double hours, double price, int minAge){
+        super(actName, city, hours, price);
         setMinAge(minAge);
     }
-    private Indoor(String city, double hours, double price, String website, int minAge){
-        super(city, hours, price, website);
+    private Indoor(String actName, String city, double hours, double price, String website, int minAge){
+        super(actName, city, hours, price, website);
         setMinAge(minAge);
     }
-    private Indoor(String city, double hours, double price, int minAge, int capacity){
-        super(city, hours, price);
+    private Indoor(String actName, String city, double hours, double price, int minAge, int capacity){
+        super(actName, city, hours, price);
         setMinAge(minAge);
         setCapacity(capacity);
     }
-    private Indoor(String city, double hours, double price, String website,int minAge, int capacity){
-        super(city, hours, price, website);
+    private Indoor(String actName, String city, double hours, double price, String website,int minAge, int capacity){
+        super(actName, city, hours, price, website);
         setMinAge(minAge);
         setCapacity(capacity);
     }

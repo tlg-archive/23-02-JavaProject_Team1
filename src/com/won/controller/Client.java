@@ -4,5 +4,6 @@ class Client {
     public static void main(String[] args) {
         ItemPlanClient itinerary = new ItemPlanClient();
         itinerary.gameLoop();
+        //TODO: Shift to separate package.
     }
 }

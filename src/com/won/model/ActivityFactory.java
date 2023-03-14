@@ -31,6 +31,7 @@ public class ActivityFactory {
 
     private Activity downCast(JSONObject j){
         String actType = (String) j.get("Activity");
+        String actName = (String) j.get("Name");
         String city = (String) j.get("City");
         double hours = Double.parseDouble((String) j.get("Hours"));
         double price = Double.parseDouble((String) j.get("Price"));
@@ -39,13 +40,13 @@ public class ActivityFactory {
 
         switch (actType) {
             case "Indoor":
-                return (website != null) ? new Indoor(city, hours, price, website) : new Indoor(city, hours, price);
+                return (website != null) ? new Indoor(actName, city, hours, price, website) : new Indoor(actName, city, hours, price);
             case "Outdoor":
-                return (website != null) ? new Outdoor(city, hours, price, website) : new Outdoor(city, hours, price);
+                return (website != null) ? new Outdoor(actName, city, hours, price, website) : new Outdoor(actName, city, hours, price);
             case "Restaurant":
                 boolean reservationRequired = Boolean.parseBoolean((String) j.get("Reservations"));
-                return (website != null) ? new Restaurant(city, hours, price, website, reservationRequired)
-                        : new Restaurant(city, hours, price, reservationRequired);
+                return (website != null) ? new Restaurant(actName, city, hours, price, website, reservationRequired)
+                        : new Restaurant(actName, city, hours, price, reservationRequired);
             default:
                 System.out.println("Failed activity given from JSON: " + actType);
                 return new Activity();

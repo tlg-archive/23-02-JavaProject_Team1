@@ -11,14 +11,14 @@ public class Outdoor extends Activity{
     /*
      * CONSTRUCTORS
      */
-    Outdoor(String city, double hours, double price){
-        super(city, hours, price);
+    Outdoor(String actName, String city, double hours, double price){
+        super(actName, city, hours, price);
     }
-    Outdoor(String city, double hours, double price, String website){
-        super(city, hours, price, website);
+    Outdoor(String actName, String city, double hours, double price, String website){
+        super(actName, city, hours, price, website);
     }
-    private Outdoor(String city, double hours, double price, String website, String equipmentRequired){
-        super(city, hours, price, website);
+    private Outdoor(String actName, String city, double hours, double price, String website, String equipmentRequired){
+        super(actName, city, hours, price, website);
         setEquipmentRequired(equipmentRequired);
     }
 

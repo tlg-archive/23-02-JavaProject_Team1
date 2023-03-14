@@ -10,21 +10,21 @@ public class Restaurant extends Activity{
     /*
      * CONSTRUCTORS
      */
-    Restaurant(String city, double hours, double price, boolean reservationRequired){
-        super(city, hours, price);
+    Restaurant(String actName, String city, double hours, double price, boolean reservationRequired){
+        super(actName, city, hours, price);
         setReservationRequired(reservationRequired);
     }
-    Restaurant(String city, double hours, double price, String website, boolean reservationRequired){
-        super(city, hours, price, website);
+    Restaurant(String actName, String city, double hours, double price, String website, boolean reservationRequired){
+        super(actName, city, hours, price, website);
         setReservationRequired(reservationRequired);
     }
-    private Restaurant(String city, double hours, double price, boolean reservationRequired, int minAge){
-        super(city, hours, price);
+    private Restaurant(String actName, String city, double hours, double price, boolean reservationRequired, int minAge){
+        super(actName, city, hours, price);
         setReservationRequired(reservationRequired);
         setMinAge(minAge);
     }
-    private Restaurant(String city, double hours, double price, String website, boolean reservationRequired, int minAge){
-        super(city, hours, price, website);
+    private Restaurant(String actName, String city, double hours, double price, String website, boolean reservationRequired, int minAge){
+        super(actName, city, hours, price, website);
         setReservationRequired(reservationRequired);
         setMinAge(minAge);
     }

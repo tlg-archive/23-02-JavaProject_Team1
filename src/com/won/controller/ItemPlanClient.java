@@ -19,20 +19,20 @@ class ItemPlanClient {
 
 
     protected void gameLoop() {
-//        requestName();
-//        String location = prompter.prompt("What city would you like to visit?");
+        requestName();
+        String location = prompter.prompt("What city would you like to visit?");
         /*
          * FOR TESTING::::
          */
-        requestLocation("Seattle");
-        user.setHours(10.0);
-        user.setMoney(100.0);
-        user.setEnvironment(true);
-        user.setRestaurant(true);
-//        requestLocation(location);
-//        requestSpendLimit();
-//        requestEnvironment();
-//        requestRestaurant();
+//        requestLocation("Seattle");
+//        user.setHours(10.0);
+//        user.setMoney(100.0);
+//        user.setEnvironment(true);
+//        user.setRestaurant(true);
+        requestLocation(location);
+        requestSpendLimit();
+        requestEnvironment();
+        requestRestaurant();
         requestPartySize();
         List<? extends Activity> itinerary= logicController.buildItinerary(user);
         displayResult(itinerary);
@@ -66,7 +66,7 @@ class ItemPlanClient {
     }
 
     private void requestSpendLimit() {
-        double money = Double.parseDouble(prompter.prompt("How much money per person are you willing to spend?"));
+        double money = Double.parseDouble(prompter.prompt("How much are you willing ot spend total?"));
         user.setMoney(money);
     }
 
@@ -113,9 +113,18 @@ class ItemPlanClient {
     }
 
     void displayResult(List<? extends Activity> itinerary) {
-        System.out.println(itinerary);
+        //TODO: Make pretty!!! Table?
+        if (itinerary.isEmpty()){
+            System.out.println("Unfortunately, there is currently no available activites based on your critieria");
+        }
+        itinerary.forEach(System.out::println);
     }
 
     //TODO: requestFinalize() {
     //   ---- possibly to ask the user if he likes it, and then change it (tier 2 goal)}
+    /*
+     * TODO:  Will need a launchBrowser(String url) method.
+     *    -- Check for OS with System.getProperty("os.name").toLowerCase() into process builder
+     */
+
 }

@@ -10,6 +10,7 @@ public class Location {
     private List<Indoor> indoorActivities = new ArrayList<>();
     private List<Outdoor> outdoorActivities = new ArrayList<>();
     private List<Activity> restaurantActivities = new ArrayList<Activity>();
+    //TODO: Rename as city, and simplify the indoor vs outdoor.  Flesh out further and think of it LIKE the DB.
 
     /*
      * CONSTRUCTORS ---- MAKING SINGLETON
@@ -27,6 +28,7 @@ public class Location {
     /*
      * Methods to add to the activities
      */
+    // TODO: Replace with only one add method.
     public void addIndoor(Indoor a){
         indoorActivities.add(a);
     }
@@ -41,7 +43,14 @@ public class Location {
 
     /*
      * GETTER ONLY
+     * TODO: Cycle through and ask instanceof
+     *  TODO: Implement the randomizer inside here.
+     *   string Activity randActivity(String type --- enum?){ --- pull the activity and pop off original list }
+     *      -- COLLECTIONS.SHUFFLE CRIES INSIDE.
+     *
+     *
      */
+
     public List<Indoor> getIndoorActivities() {
         return indoorActivities;
     }
