@@ -33,9 +33,12 @@ class ItemPlanClient {
 //        requestSpendLimit();
 //        requestEnvironment();
 //        requestRestaurant();
+        requestPartySize();
         List<? extends Activity> itinerary= logicController.buildItinerary(user);
         displayResult(itinerary);
     }
+
+
 
 
     private void requestName() {
@@ -93,6 +96,18 @@ class ItemPlanClient {
                 return;
             } else {
                 System.out.println("Invalid input. Please enter Y or N.");
+            }
+        }
+    }
+    private void requestPartySize() {
+        while(true){
+            String party = prompter.prompt("How many people(including yourself) will you be paying for?");
+            try {
+                int partySize = Integer.parseInt(party);
+                user.setPartySize(partySize);
+                return;
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
             }
         }
     }

@@ -35,7 +35,7 @@ public class ActivityFactory {
         double hours = Double.parseDouble((String) j.get("Hours"));
         double price = Double.parseDouble((String) j.get("Price"));
         String website;
-        website = (j.containsKey("Website")) ? (String) j.get("website") : null;
+        website = (j.containsKey("Website")) ? (String) j.get("Website") : null;
 
         switch (actType) {
             case "Indoor":

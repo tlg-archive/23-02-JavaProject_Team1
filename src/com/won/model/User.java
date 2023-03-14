@@ -8,6 +8,7 @@ public class User {
     private Location city;
     private boolean environment;
     private boolean restaurant;
+    private int partySize;
 
     public User() {}
 
@@ -87,5 +88,12 @@ public class User {
 
     public void setRestaurant(boolean restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public int getPartySize(){
+        return partySize;
+    }
+    public void setPartySize(int partySize) {
+        this.partySize = partySize;
     }
 }
