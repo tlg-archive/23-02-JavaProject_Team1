@@ -6,20 +6,20 @@ import com.won.model.user.User;
 
 import java.util.*;
 
+/**
+ * Controller acts as logic behind TeamWon.
+ */
 class Controller {
-    private List<Activity> restaurants = new ArrayList<>();
-    private List<? extends Activity> activities = new ArrayList<>();
+    private Collection<Activity> restaurants = new ArrayList<>();
+    private Collection<? extends Activity> activities = new ArrayList<>();
 
-    /*
-     * The logic controller will utilize the user inputs to pull activity and restaurant from the "database"
+
+
+    /**
+     * buildItinerary takes a user and returns a Collection<Activity>
+     *     randomized as per design requirements.
+     *
      */
-
-    /*
-     * Activity must be in the location that the user selected and will utilize the budget input from
-     * the user to determine whether to pull the activity from the database. Then updateUser.
-     */
-
-
     public Collection<Activity> buildItinerary(User user) {
 
         // Helper variables:

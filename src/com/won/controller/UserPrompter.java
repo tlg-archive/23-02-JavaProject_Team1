@@ -15,18 +15,20 @@ import java.util.List;
 import java.util.Scanner;
 
 
+/**
+ *  Main player of project.  Works to start and end all user interactions.
+ */
 public class UserPrompter {
     Prompter prompter = new Prompter(new Scanner(System.in));
     User user = new User();
     Controller controller = new Controller();
 
 
+    /**
+     * gameloop handles all user input and outsources to outside methods and classes.
+     */
     public void gameLoop() {
         requestName();
-
-        /*
-         * FOR TESTING::::
-         */
         requestSpendLimit();
         requestEnvironment();
         requestRestaurant();

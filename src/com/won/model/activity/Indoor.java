@@ -1,7 +1,5 @@
 package com.won.model.activity;
 
-import com.won.model.activity.Activity;
-
 public class Indoor extends Activity {
  /*
   * INDOOR SPECIFIC ATTRIBUTES

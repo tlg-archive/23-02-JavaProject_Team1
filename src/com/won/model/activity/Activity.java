@@ -1,5 +1,8 @@
 package com.won.model.activity;
 
+/**
+ * Super class to specific categories of Activity
+ */
 public class Activity {
     /*
      * COMMON ATTRIBUTES BETWEEN ALL ACTIVITIES

@@ -30,10 +30,11 @@ public class ActivityFactory {
                     setOptionals(activity, (JSONObject) i);
                     collectActivity(activity);
                 }
+                // Does the user want to be indoors?  Is the activity Indoors?
                 if (user.isEnvironment() && activity instanceof Indoor) {
                     setOptionals(activity, (JSONObject) i);
                     collectActivity(activity);
-                }
+                } // Does the user want to be outdoors?  Is the activity Outdoors?
                 if (!user.isEnvironment() && activity instanceof Outdoor){
                     setOptionals(activity, (JSONObject) i);
                     collectActivity(activity);
@@ -93,13 +94,5 @@ public class ActivityFactory {
     }
     private void collectActivity(Activity a){
         ActivityDB.getInstance().addActivity(a);
-
-//        if(a instanceof Indoor){
-//            ActivityDB.getInstance().addIndoor((Indoor) a);
-//        } else if(a instanceof Outdoor){
-//            ActivityDB.getInstance().addOutdoor((Outdoor) a);
-//        } else {
-//            ActivityDB.getInstance().addRestaurantActivities((Restaurant) a);
-//        }
     }
-}
+};
