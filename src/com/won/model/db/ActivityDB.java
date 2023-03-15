@@ -40,9 +40,7 @@ public class ActivityDB {
      * Business method to Randomize Activities
      */
     public void shuffleActivities(){
-        System.out.println(getAllActivities());
         Collections.shuffle((List<?>) allActivities);
-        System.out.println(getAllActivities());
     }
 
     /*
@@ -52,30 +50,21 @@ public class ActivityDB {
 
 
     // Sorry, Jay.  The enum was rude
-    public Activity randomActivityByType(String activityType){
-        for (var activity : getAllActivities()){
-            // 3 cases: activityType
-            System.out.println(activity);
-            switch (activityType){
-                case "Indoor":
-                    if (activity instanceof Indoor){
-                        removeRandomActivity(activity);
-                        return activity;
-                    }
-                case "Outdoor":
-                    if(activity instanceof Outdoor){
-                        removeRandomActivity(activity);
-                        return activity;
-                    }
-                case "Restaurant":
-                    if(activity instanceof Restaurant){
-                        removeRandomActivity(activity);
-                        return activity;
-                    }
-            }
+    public Optional<Activity> randomActivityByType(String activityType){
+        switch (activityType){
+            case "Indoor":
+                Optional<Activity> resultIn = getAllActivities().stream().filter(a -> a instanceof Indoor).findFirst();
+                resultIn.ifPresent(this::removeRandomActivity);
+                return resultIn;
+            case "Outdoor":
+                Optional<Activity> resultOut = getAllActivities().stream().filter(a -> a instanceof Outdoor).findFirst();
+                resultOut.ifPresent(this::removeRandomActivity);
+                return resultOut;
+            default:
+                Optional<Activity> resultRest = getAllActivities().stream().filter(a -> a instanceof Restaurant).findFirst();
+                resultRest.ifPresent(this::removeRandomActivity);
+                return resultRest;
         }
-        System.out.println("O SHIT I'M NULL");
-        return null;
     }
 
     /*

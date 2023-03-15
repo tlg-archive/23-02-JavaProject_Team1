@@ -6,10 +6,7 @@ import com.won.model.db.ActivityDB;
 import com.won.model.db.ActivityFactory;
 import com.won.model.user.User;
 
-import java.util.List;
-import java.util.Random;
-
-import java.util.ArrayList;
+import java.util.*;
 
 class Controller {
     private List<Activity> restaurants = new ArrayList<>();
@@ -35,21 +32,26 @@ class Controller {
         //TODO: Only include ONE restaurant in the list!  (Or we're gonna make our peeps fat)
         while (!db.getAllActivities().isEmpty()) {
             // First find a random Activity:
-            Activity activity = db.randomActivityByType(environment);
+            Optional<Activity> activity = db.randomActivityByType(environment);
+
             // Now test if it meets our criteria (money and time)
-            if (activity != null &&  activity.getHours() <= user.getHours()
-                && activity.getPrice() * user.getPartySize() <= user.getMoney()) {
-                    itinerary.add(activity);
-                    updateUser(user, activity.getHours(), activity.getPrice());
+            if(activity.isPresent()){
+                    if (activity.get().getHours() <= user.getHours()
+                            && activity.get().getPrice() * user.getPartySize() <= user.getMoney()) {
+                        itinerary.add(activity.get());
+                        updateUser(user, activity.get().getHours(), activity.get().getPrice());
+                    }
             }
             if (user.isRestaurant()) {
                 // First find a random Restaurant
-                Activity restaurant = db.randomActivityByType("Restaurant");
+                Optional<Activity> restaurant = db.randomActivityByType("Restaurant");
                 // Now test if it meets our criteria (money and time)
-                if (activity != null && restaurant.getHours() <= user.getHours()
-                    && restaurant.getPrice() * user.getPartySize() <= user.getMoney()) {
-                        itinerary.add(restaurant);
-                        updateUser(user, restaurant.getHours(), restaurant.getPrice());
+                if (activity.isPresent()){
+                    if (restaurant.get().getHours() <= user.getHours()
+                            && restaurant.get().getPrice() * user.getPartySize() <= user.getMoney()) {
+                        itinerary.add(restaurant.get());
+                        updateUser(user, restaurant.get().getHours(), restaurant.get().getPrice());
+                    }
                 }
             }
         }
