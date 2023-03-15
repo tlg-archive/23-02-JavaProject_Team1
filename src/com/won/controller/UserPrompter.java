@@ -27,31 +27,11 @@ public class UserPrompter {
         /*
          * FOR TESTING::::
          */
-//        requestLocation("Seattle");
-//        user.setHours(10.0);
-//        user.setMoney(100.0);
-//        user.setEnvironment(true);
-//        user.setRestaurant(true);
         requestSpendLimit();
         requestEnvironment();
         requestRestaurant();
         requestPartySize();
-
-        String city = prompter.prompt("Please choose a city from the following list:" +
-                "\n1. Seattle\n2. Denver\nEnter your choice (1 or 2):");
-        city = city.trim();
-        switch (city) {
-            case "1":
-                requestLocation("Seattle", user);
-                break;
-            case "2":
-                requestLocation("Denver", user);
-                break;
-            default:
-                prompter.prompt("Invalid choice. Please choose again (1 or 2)");
-        }
-
-
+        requestCity();
         Collection<Activity> itinerary = controller.buildItinerary(user);
         displayResult(itinerary);
         requestWebsites(itinerary);
@@ -69,6 +49,24 @@ public class UserPrompter {
                 return;
             } else {
                 System.out.println("Invalid input. Please try again.");
+            }
+        }
+    }
+
+    private void requestCity(){
+        while(true) {
+            String city = prompter.prompt("Please choose a city from the following list: " +
+                    "\n1. Seattle\n2. Denver\nEnter your choice (1 or 2): ");
+            city = city.trim();
+            switch (city) {
+                case "1":
+                    requestLocation("Seattle", user);
+                    return;
+                case "2":
+                    requestLocation("Denver", user);
+                    return;
+                default:
+                    prompter.prompt("Invalid choice. Please choose again (1 or 2).");
             }
         }
     }
@@ -120,7 +118,8 @@ public class UserPrompter {
 
     private void requestPartySize() {
         while (true) {
-            String party = prompter.prompt("How many people(including yourself) will you be paying for?");
+            String party = prompter.prompt("How many people(including yourself) will you be paying for? ");
+            // Will accept 0 as answer because other people can pay for us!  Only hours matter at that point.  (Gift cards!)
             try {
                 int partySize = Integer.parseInt(party.trim());
                 user.setPartySize(partySize);
@@ -135,21 +134,18 @@ public class UserPrompter {
         ViewPane.displayResult(itinerary);
     }
 
-    //TODO: requestFinalize() {
-    //   ---- possibly to ask the user if he likes it, and then change it (tier 2 goal)}
-    /*
-     * TODO:  Will need a launchBrowser(String url) method.
-     *    -- Check for OS with System.getProperty("os.name").toLowerCase() into process builder
-     *    -- If windows: start "https://wwww.google.com"
-     */
-    private void requestWebsites(List<? extends Activity> itinerary){
-        while(true){
-            String goToWeb = prompter.prompt("Would you like to visit the websites? (Y/N)");
+
+    private void requestWebsites(Collection<Activity> itinerary){
+        while(itinerary.size() > 0){
+            String goToWeb = prompter.prompt("Would you like to visit the websites? (Y/N): ");
             try {
                 if (goToWeb.equalsIgnoreCase("Y")) {
                     itinerary.forEach(a -> launchBrowser(a.getWebsite()));
+                    return;
                 }
-                return;
+                else if (goToWeb.equalsIgnoreCase("N")){
+                    return;
+                }
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
@@ -171,11 +167,13 @@ public class UserPrompter {
                 if (email.equalsIgnoreCase("Y")) {
                     email = prompter.prompt("Who would you like to email it too? (Enter emails separated by ',') for multiple.");
                     Emailer.email(email, itinerary, user);
+                    return;
                 }
-                return;
+                if (email.equalsIgnoreCase("N")){
+                    return;
+                }
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
     }
-
 }

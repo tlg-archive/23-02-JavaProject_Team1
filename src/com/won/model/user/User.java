@@ -84,7 +84,7 @@ public class User {
         this.environment = environment;
     }
 
-    public boolean isRestaurant() {
+    public boolean wantRestaurant() {
         return restaurant;
     }
 

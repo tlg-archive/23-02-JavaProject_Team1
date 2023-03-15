@@ -26,7 +26,7 @@ public class ActivityFactory {
             Activity activity = downCast((JSONObject) i);
             if(activity.getCity().equals(city)){
                 // Is it a restaurant?  Do we need a restaurant?
-                if (user.isRestaurant() && activity instanceof Restaurant){
+                if (user.wantRestaurant() && activity instanceof Restaurant){
                     setOptionals(activity, (JSONObject) i);
                     collectActivity(activity);
                 }

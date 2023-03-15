@@ -1,9 +1,7 @@
 package com.won.controller;
 
 import com.won.model.activity.Activity;
-import com.won.model.activity.Restaurant;
 import com.won.model.db.ActivityDB;
-import com.won.model.db.ActivityFactory;
 import com.won.model.user.User;
 
 import java.util.*;
@@ -42,15 +40,15 @@ class Controller {
                         updateUser(user, activity.get().getHours(), activity.get().getPrice());
                     }
             }
-            if (user.isRestaurant()) {
+            if (user.wantRestaurant()) {
                 // First find a random Restaurant
                 Optional<Activity> restaurant = db.randomActivityByType("Restaurant");
                 // Now test if it meets our criteria (money and time)
                 if (restaurant.isPresent()){
                     if (restaurant.get().getHours() <= user.getHours()
-                            && restaurant.get().getPrice() * user.getPartySize() <= user.getMoney()) {
-                        itinerary.add(restaurant.get());
-                        updateUser(user, restaurant.get().getHours(), restaurant.get().getPrice());
+                        && (restaurant.get().getPrice() * user.getPartySize()) <= user.getMoney()) {
+                            itinerary.add(restaurant.get());
+                            updateUser(user, restaurant.get().getHours(), restaurant.get().getPrice());
                     }
                 }
             }
