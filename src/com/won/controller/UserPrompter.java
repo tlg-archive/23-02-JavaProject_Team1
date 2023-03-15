@@ -5,6 +5,8 @@ import com.won.model.activity.Activity;
 import com.won.model.db.ActivityDB;
 import com.won.model.db.ActivityFactory;
 import com.won.model.user.User;
+import com.won.viewer.Emailer;
+import com.won.viewer.ViewPane;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -49,6 +51,7 @@ public class UserPrompter {
         List<? extends Activity> itinerary = controller.buildItinerary(user);
         displayResult(itinerary);
         requestWebsites(itinerary);
+        requestEmail(itinerary, user);
     }
 
 
@@ -125,18 +128,7 @@ public class UserPrompter {
     }
 
     void displayResult(Collection<Activity> itinerary) {
-        //TODO: Make pretty!!! Table?
-        if (itinerary.isEmpty()) {
-            System.out.println("Unfortunately, there is currently no available activites based on your critieria");
-        }
-        System.out.println(String.format("%-25s %-20s %-20s %-25s", "Attraction", "Hours", "Price Per Person", "Website"));
-        System.out.println("------------------------------------------------------------");
-        for (Activity activity : itinerary) {
-            String website = activity.getWebsite() != null ? activity.getWebsite().toString() : "N/A";
-            String attraction = activity.getActName().length() > 25 ? activity.getActName().substring(0, 22) + "..." : activity.getActName();
-            System.out.println(String.format("%-25s %-20.1f $%-19.2f %-25s", attraction,
-                    activity.getHours(), activity.getPrice(), website));
-        }
+        ViewPane.displayResult(itinerary);
     }
 
     //TODO: requestFinalize() {
@@ -161,16 +153,25 @@ public class UserPrompter {
     }
 
     private void launchBrowser(String url){
-//        String os = System.getProperty("os.name").toLowerCase();
-//        ProcessBuilder process = (os.contains("windows")) ?
-//                new ProcessBuilder("start ", url) :
-//                new ProcessBuilder("open ", url);
-//                process.inheritIO().command("start " + url);
-
+        String os = (System.getProperty("os.name").toLowerCase().contains("windows")) ? "explorer " : "start ";
         try {
-            Runtime.getRuntime().exec("explorer " + url);
+            Runtime.getRuntime().exec(os + url);
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
+
+    private void requestEmail(Collection<Activity> itinerary, User user){
+        String email = prompter.prompt("Would you like to email the itinerary? (Y/N)");
+            try {
+                if (email.equalsIgnoreCase("Y")) {
+                    email = prompter.prompt("Who would you like to email it too? (Enter emails separated by ',') for multiple.");
+                    Emailer.email(email, itinerary, user);
+                }
+                return;
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+    }
+
 }
