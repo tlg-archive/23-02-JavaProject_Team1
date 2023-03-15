@@ -5,9 +5,8 @@ import com.won.viewer.Emailer;
 
 public class Client {
     public static void main(String[] args) {
-        Emailer email = new Emailer();
+//        Emailer.sendEmail();
         UserPrompter itinerary = new UserPrompter();
         itinerary.gameLoop();
-        //TODO: Shift to separate package.
     }
 }

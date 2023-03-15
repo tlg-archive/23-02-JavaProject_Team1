@@ -2,6 +2,8 @@ package com.won.controller;
 
 import com.won.model.activity.Activity;
 import com.won.model.activity.Restaurant;
+import com.won.model.db.ActivityDB;
+import com.won.model.db.ActivityFactory;
 import com.won.model.user.User;
 
 import java.util.List;
@@ -22,50 +24,36 @@ class Controller {
      * the user to determine whether to pull the activity from the database. Then updateUser.
      */
 
-    public List<? extends Activity> pullActivity(User user) {
-        if (user.isRestaurant()) {
-            restaurants = user.getCity().getRestaurantActivities();
-        }
-        return activities = (user.isEnvironment()) ? user.getCity().getIndoorActivities() : user.getCity().getOutdoorActivities();
-    }
 
-    public List<? extends Activity> buildItinerary(User user) {
-        pullActivity(user);
-        List<Activity> itinerary = new ArrayList<>();
-        //TODO: Combine activities and restaurants into one list and request instanceof
-        // Perhaps have the Location class conduct the randomizer.
-        while (!activities.isEmpty() && !restaurants.isEmpty()) {
-            chooseRandomActivity(user,itinerary); // TODO: <---- shoved from Location.java
-            chooseRandomRestaurant(user,itinerary);
+    public Collection<Activity> buildItinerary(User user) {
+
+        // Helper variables:
+        String environment = (user.isEnvironment() == true) ? "Indoor" : "Outdoor";
+        ActivityDB db = ActivityDB.getInstance();
+        db.shuffleActivities();
+        Collection<Activity> itinerary = new ArrayList<>();
+        //TODO: Only include ONE restaurant in the list!  (Or we're gonna make our peeps fat)
+        while (!db.getAllActivities().isEmpty()) {
+            // First find a random Activity:
+            Activity activity = db.randomActivityByType(environment);
+            // Now test if it meets our criteria (money and time)
+            if (activity != null &&  activity.getHours() <= user.getHours()
+                && activity.getPrice() * user.getPartySize() <= user.getMoney()) {
+                    itinerary.add(activity);
+                    updateUser(user, activity.getHours(), activity.getPrice());
+            }
+            if (user.isRestaurant()) {
+                // First find a random Restaurant
+                Activity restaurant = db.randomActivityByType("Restaurant");
+                // Now test if it meets our criteria (money and time)
+                if (activity != null && restaurant.getHours() <= user.getHours()
+                    && restaurant.getPrice() * user.getPartySize() <= user.getMoney()) {
+                        itinerary.add(restaurant);
+                        updateUser(user, restaurant.getHours(), restaurant.getPrice());
+                }
+            }
         }
         return itinerary;
-    }
-
-    private void chooseRandomActivity(User user, List<Activity> itinerary){
-        while (activities.size() > 0) {
-            Activity activity = getRandomActivity(activities);
-            if (activity.getHours() <= user.getHours()
-                    && activity.getPrice()*user.getPartySize() <= user.getMoney()) {
-                itinerary.add(activity);
-                updateUser(user, activity.getHours(), activity.getPrice());
-                activities.remove(activity);
-                return;
-            }
-            activities.remove(activity);
-        }
-    }
-    private void chooseRandomRestaurant(User user, List<Activity> itinerary){
-        while (restaurants.size() > 0) {
-            Restaurant restaurant = (Restaurant) getRandomActivity(restaurants);
-            if (restaurant.getHours() <= user.getHours()
-                    && restaurant.getPrice()*user.getPartySize() <= user.getMoney()) {
-                itinerary.add(restaurant);
-                updateUser(user, restaurant.getHours(), restaurant.getPrice());
-                restaurants.remove(restaurant);
-                return;
-            }
-            restaurants.remove(restaurant);
-        }
     }
 
     public void updateUser(User user, double activityHours, double activityPrice) {

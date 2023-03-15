@@ -37,10 +37,9 @@ public class Indoor extends Activity {
         setCapacity(capacity);
     }
 
+    public Indoor() {
 
-
-
-
+    }
 
 
     /*

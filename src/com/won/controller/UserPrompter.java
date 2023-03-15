@@ -8,6 +8,7 @@ import com.won.model.user.User;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,7 +42,6 @@ public class UserPrompter {
 //        user.setMoney(100.0);
 //        user.setEnvironment(true);
 //        user.setRestaurant(true);
-        requestLocation(city);
         requestSpendLimit();
         requestEnvironment();
         requestRestaurant();
@@ -124,12 +124,19 @@ public class UserPrompter {
         }
     }
 
-    void displayResult(List<? extends Activity> itinerary) {
+    void displayResult(Collection<Activity> itinerary) {
         //TODO: Make pretty!!! Table?
         if (itinerary.isEmpty()) {
             System.out.println("Unfortunately, there is currently no available activites based on your critieria");
         }
-        itinerary.forEach(System.out::println);
+        System.out.println(String.format("%-25s %-20s %-20s %-25s", "Attraction", "Hours", "Price Per Person", "Website"));
+        System.out.println("------------------------------------------------------------");
+        for (Activity activity : itinerary) {
+            String website = activity.getWebsite() != null ? activity.getWebsite().toString() : "N/A";
+            String attraction = activity.getActName().length() > 25 ? activity.getActName().substring(0, 22) + "..." : activity.getActName();
+            System.out.println(String.format("%-25s %-20.1f $%-19.2f %-25s", attraction,
+                    activity.getHours(), activity.getPrice(), website));
+        }
     }
 
     //TODO: requestFinalize() {

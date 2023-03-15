@@ -78,12 +78,14 @@ public class ActivityFactory {
         }
     }
     private void collectActivity(Activity a){
-        if(a instanceof Indoor){
-            ActivityDB.getInstance().addIndoor((Indoor) a);
-        } else if(a instanceof Outdoor){
-            ActivityDB.getInstance().addOutdoor((Outdoor) a);
-        } else {
-            ActivityDB.getInstance().addRestaurantActivities((Restaurant) a);
-        }
+        ActivityDB.getInstance().addActivity(a);
+
+//        if(a instanceof Indoor){
+//            ActivityDB.getInstance().addIndoor((Indoor) a);
+//        } else if(a instanceof Outdoor){
+//            ActivityDB.getInstance().addOutdoor((Outdoor) a);
+//        } else {
+//            ActivityDB.getInstance().addRestaurantActivities((Restaurant) a);
+//        }
     }
 }
