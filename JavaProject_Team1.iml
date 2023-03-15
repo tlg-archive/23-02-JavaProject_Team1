@@ -65,6 +65,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="javax.mail" level="project" />
+    <orderEntry type="library" exported="" name="activation-1.1" level="project" />
     <orderEntry type="library" name="activation-1.1" level="project" />
   </component>
 </module>

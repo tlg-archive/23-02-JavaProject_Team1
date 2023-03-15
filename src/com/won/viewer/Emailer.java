@@ -10,7 +10,6 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Collection;
-import java.util.List;
 import java.util.Properties;
 
 public class Emailer {
@@ -34,7 +33,6 @@ public class Emailer {
                 });
 
         try {
-
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("joshua.richardson.tlgcohort@gmail.com"));
             message.setRecipients(
