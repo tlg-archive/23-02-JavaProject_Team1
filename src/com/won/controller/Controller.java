@@ -46,7 +46,7 @@ class Controller {
                 // First find a random Restaurant
                 Optional<Activity> restaurant = db.randomActivityByType("Restaurant");
                 // Now test if it meets our criteria (money and time)
-                if (activity.isPresent()){
+                if (restaurant.isPresent()){
                     if (restaurant.get().getHours() <= user.getHours()
                             && restaurant.get().getPrice() * user.getPartySize() <= user.getMoney()) {
                         itinerary.add(restaurant.get());

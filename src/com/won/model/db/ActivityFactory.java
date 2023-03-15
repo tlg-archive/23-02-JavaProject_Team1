@@ -8,6 +8,7 @@ import com.won.model.activity.Activity;
 import com.won.model.activity.Indoor;
 import com.won.model.activity.Outdoor;
 import com.won.model.activity.Restaurant;
+import com.won.model.user.User;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -17,18 +18,31 @@ public class ActivityFactory {
 
 
 
-    public void loadJSON(String city) throws IOException, ParseException {
+    public void loadJSON(String city, User user) throws IOException, ParseException {
         Object o = new JSONParser().parse(new FileReader(String.valueOf(Path.of("resources/activities.json"))));
         JSONArray jsonArray = (JSONArray) o;
         for (var i : jsonArray){
             // Need to determine if we've seen this city before!!!
             Activity activity = downCast((JSONObject) i);
-            if (activity.getCity().equals(city)){
-                setOptionals(activity, (JSONObject) i);
-                collectActivity(activity);
+            if(activity.getCity().equals(city)){
+                // Is it a restaurant?  Do we need a restaurant?
+                if (user.isRestaurant() && activity instanceof Restaurant){
+                    setOptionals(activity, (JSONObject) i);
+                    collectActivity(activity);
+                }
+                if (user.isEnvironment() && activity instanceof Indoor) {
+                    setOptionals(activity, (JSONObject) i);
+                    collectActivity(activity);
+                }
+                if (!user.isEnvironment() && activity instanceof Outdoor){
+                    setOptionals(activity, (JSONObject) i);
+                    collectActivity(activity);
+                }
+
             }
         }
     }
+
 
     private Activity downCast(JSONObject j){
         String actType = (String) j.get("Activity");

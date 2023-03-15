@@ -23,19 +23,7 @@ public class UserPrompter {
 
     public void gameLoop() {
         requestName();
-        String city = prompter.prompt("Please choose a city from the following list:" +
-                "\n1. Seattle\n2. Denver\nEnter your choice (1 or 2):");
-        city = city.trim();
-        switch (city) {
-            case "1":
-                requestLocation("Seattle");
-                break;
-            case "2":
-                requestLocation("Denver");
-                break;
-            default:
-                prompter.prompt("Invalid choice. Please choose again (1 or 2)");
-        }
+
         /*
          * FOR TESTING::::
          */
@@ -48,7 +36,23 @@ public class UserPrompter {
         requestEnvironment();
         requestRestaurant();
         requestPartySize();
-        List<? extends Activity> itinerary = controller.buildItinerary(user);
+
+        String city = prompter.prompt("Please choose a city from the following list:" +
+                "\n1. Seattle\n2. Denver\nEnter your choice (1 or 2):");
+        city = city.trim();
+        switch (city) {
+            case "1":
+                requestLocation("Seattle", user);
+                break;
+            case "2":
+                requestLocation("Denver", user);
+                break;
+            default:
+                prompter.prompt("Invalid choice. Please choose again (1 or 2)");
+        }
+
+
+        Collection<Activity> itinerary = controller.buildItinerary(user);
         displayResult(itinerary);
         requestWebsites(itinerary);
         requestEmail(itinerary, user);
@@ -69,10 +73,10 @@ public class UserPrompter {
         }
     }
 
-    private void requestLocation(String city) {
+    private void requestLocation(String city, User user) {
         ActivityFactory activityFactory = new ActivityFactory();
         try {
-            activityFactory.loadJSON(city);
+            activityFactory.loadJSON(city, user);
             user.setCity(ActivityDB.getInstance());
         } catch (IOException | ParseException e) {
             e.printStackTrace();
