@@ -11,7 +11,7 @@ import java.util.*;
 /**
  * @author Joshua Richardson
  * receives JSON and holds all activites with the ability to shuffle
- *  and able to retrieve an activity by type.
+ * and able to retrieve an activity by type.
  */
 public class ActivityDB {
     private Collection<Activity> allActivities = new ArrayList<>();
@@ -20,18 +20,19 @@ public class ActivityDB {
      * CONSTRUCTORS ---- MAKING SINGLETON
      */
     private static ActivityDB activityDB = null;
+
     private ActivityDB() {
     }
-    public static synchronized ActivityDB getInstance()
-    {
-        if(activityDB == null) activityDB = new ActivityDB();
+
+    public static synchronized ActivityDB getInstance() {
+        if (activityDB == null) activityDB = new ActivityDB();
         return activityDB;
     }
 
     /**
      * Business method to Randomize Activities
      */
-    public void shuffleActivities(){
+    public void shuffleActivities() {
         Collections.shuffle((List<?>) allActivities);
     }
 
@@ -39,18 +40,21 @@ public class ActivityDB {
      * Business method to pull the first random Activity that meets the criteria of Environment vs Restaurant
      * What happens when it's empty
      */
-    public Optional<Activity> randomActivityByType(String activityType){
-        switch (activityType){
+    public Optional<Activity> randomActivityByType(String activityType) {
+        switch (activityType) {
             case "Indoor":
-                Optional<Activity> resultIn = getAllActivities().stream().filter(a -> a instanceof Indoor).findFirst();
+                Optional<Activity> resultIn = getAllActivities().stream()
+                        .filter(a -> a instanceof Indoor).findFirst();
                 resultIn.ifPresent(this::removeRandomActivity);
                 return resultIn;
             case "Outdoor":
-                Optional<Activity> resultOut = getAllActivities().stream().filter(a -> a instanceof Outdoor).findFirst();
+                Optional<Activity> resultOut = getAllActivities().stream()
+                        .filter(a -> a instanceof Outdoor).findFirst();
                 resultOut.ifPresent(this::removeRandomActivity);
                 return resultOut;
             default:
-                Optional<Activity> resultRest = getAllActivities().stream().filter(a -> a instanceof Restaurant).findFirst();
+                Optional<Activity> resultRest = getAllActivities().stream()
+                        .filter(a -> a instanceof Restaurant).findFirst();
                 resultRest.ifPresent(this::removeRandomActivity);
                 return resultRest;
         }
@@ -59,21 +63,21 @@ public class ActivityDB {
     /*
      * Pop element off the Collection once it's used.
      */
-    private void removeRandomActivity(Activity random){
+    private void removeRandomActivity(Activity random) {
         getAllActivities().remove(random);
     }
 
     /*
      * Methods to add to the activities
      */
-    public void addActivity(Activity activity){
+    void addActivity(Activity activity) {
         allActivities.add(activity);
     }
 
     /*
      * GETTER ONLY
      */
-    public Collection<Activity> getAllActivities(){
+    public Collection<Activity> getAllActivities() {
         return allActivities;
     }
 

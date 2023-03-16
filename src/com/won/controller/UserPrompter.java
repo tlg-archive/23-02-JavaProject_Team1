@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 
 /**
- *  Main player of project.  Works to start and end all user interactions.
+ * Main player of project.  Works to start and end all user interactions.
  */
 public class UserPrompter {
     Prompter prompter = new Prompter(new Scanner(System.in));
@@ -66,8 +66,8 @@ public class UserPrompter {
         }
     }
 
-    private void requestCity(){
-        while(true) {
+    private void requestCity() {
+        while (true) {
             String city = prompter.prompt("Please choose a city from the following list: " +
                     "\n1. Seattle\n2. Denver\nEnter your choice (1 or 2): ");
             city = city.trim();
@@ -147,16 +147,24 @@ public class UserPrompter {
         ViewPane.displayResult(itinerary);
     }
 
-
-    private void requestWebsites(Collection<Activity> itinerary){
-        while(itinerary.size() > 0){
+    private void launchBrowser(String url) {
+        //Currently only working with windows.
+        String os = (System.getProperty("os.name").toLowerCase()
+                .contains("windows")) ? "explorer " : "start ";
+        try {
+            Runtime.getRuntime().exec(os + url);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+    private void requestWebsites(Collection<Activity> itinerary) {
+        while (itinerary.size() > 0) {
             String goToWeb = prompter.prompt("Would you like to visit the websites? (Y/N): ");
             try {
                 if (goToWeb.equalsIgnoreCase("Y")) {
                     itinerary.forEach(a -> launchBrowser(a.getWebsite()));
                     return;
-                }
-                else if (goToWeb.equalsIgnoreCase("N")){
+                } else if (goToWeb.equalsIgnoreCase("N")) {
                     return;
                 }
             } catch (NumberFormatException e) {
@@ -165,14 +173,7 @@ public class UserPrompter {
         }
     }
 
-    private void launchBrowser(String url){
-        String os = (System.getProperty("os.name").toLowerCase().contains("windows")) ? "explorer " : "start ";
-        try {
-            Runtime.getRuntime().exec(os + url);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 
     private void requestEmail(Collection<Activity> itinerary, User user){
         String email = prompter.prompt("Would you like to email the itinerary? (Y/N)");
@@ -182,7 +183,7 @@ public class UserPrompter {
                     Emailer.email(email, itinerary, user);
                     return;
                 }
-                if (email.equalsIgnoreCase("N")){
+                if (email.equalsIgnoreCase("N")) {
                     return;
                 }
             } catch (NumberFormatException e) {

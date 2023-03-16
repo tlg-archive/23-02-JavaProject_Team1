@@ -17,7 +17,8 @@ public class User {
     private boolean restaurant;
     private int partySize;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String name) {
         setName(name);
@@ -29,22 +30,22 @@ public class User {
     }
 
     public User(String name, double money, double hours) {
-        this(name,money);
+        this(name, money);
         setHours(hours);
     }
 
     public User(String name, double money, double hours, ActivityDB city) {
-        this(name,money,hours);
+        this(name, money, hours);
         setCity(city);
     }
 
     public User(String name, double money, double hours, ActivityDB city, boolean environment) {
-        this(name,money,hours,city);
+        this(name, money, hours, city);
         setEnvironment(environment);
     }
 
     public User(String name, double money, double hours, ActivityDB city, boolean environment, boolean restaurant) {
-        this(name,money,hours,city,environment);
+        this(name, money, hours, city, environment);
         setEnvironment(environment);
         setRestaurant(restaurant);
     }
@@ -97,9 +98,10 @@ public class User {
         this.restaurant = restaurant;
     }
 
-    public int getPartySize(){
+    public int getPartySize() {
         return partySize;
     }
+
     public void setPartySize(int partySize) {
         this.partySize = partySize;
     }

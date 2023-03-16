@@ -10,32 +10,30 @@ import java.util.Collection;
 
 /**
  * @author Brandon Park
- *  UI output of activities to display for program user.
+ * UI output of activities to display for program user.
  */
-    public class ViewPane {
+public class ViewPane {
 
 
-        public static void displayBanner1() {
-            try{
-//            String banner = Files.readString(Path.of("resources/banner2.txt"));
+    public static void displayBanner1() {
+        try {
             Files.lines(Path.of("resources/banner2.txt"))
-                .forEach(System.out::println);
-            } catch (Exception e) {
-                e.getMessage();
-                e.printStackTrace();
-            }
+                    .forEach(System.out::println);
+        } catch (Exception e) {
+            e.getMessage();
+            e.printStackTrace();
         }
-        public static void displayBanner2() {
-            try{
-//            String banner = Files.readString(Path.of("resources/banner1.txt"));
-            Files.lines(Path.of("resources/banner1.txt"))
-                .forEach(System.out::println);
-            } catch (Exception e) {
-                e.getMessage();
-                e.printStackTrace();
-            }
-        }
+    }
 
+    public static void displayBanner2() {
+        try {
+            Files.lines(Path.of("resources/banner1.txt"))
+                    .forEach(System.out::println);
+        } catch (Exception e) {
+            e.getMessage();
+            e.printStackTrace();
+        }
+    }
 
 
     public static void displayResult(Collection<Activity> itinerary) {

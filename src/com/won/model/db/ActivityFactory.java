@@ -24,12 +24,12 @@ public class ActivityFactory {
     public void loadJSON(String city, User user) throws IOException, ParseException {
         Object o = new JSONParser().parse(new FileReader(String.valueOf(Path.of("resources/activities.json"))));
         JSONArray jsonArray = (JSONArray) o;
-        for (var i : jsonArray){
+        for (var i : jsonArray) {
             // Need to determine if we've seen this city before!!!
             Activity activity = downCast((JSONObject) i);
-            if(activity.getCity().equals(city)){
+            if (activity.getCity().equals(city)) {
                 // Is it a restaurant?  Do we need a restaurant?
-                if (user.wantRestaurant() && activity instanceof Restaurant){
+                if (user.wantRestaurant() && activity instanceof Restaurant) {
                     setOptionals(activity, (JSONObject) i);
                     collectActivity(activity);
                 }
@@ -38,7 +38,7 @@ public class ActivityFactory {
                     setOptionals(activity, (JSONObject) i);
                     collectActivity(activity);
                 } // Does the user want to be outdoors?  Is the activity Outdoors?
-                if (!user.isEnvironment() && activity instanceof Outdoor){
+                if (!user.isEnvironment() && activity instanceof Outdoor) {
                     setOptionals(activity, (JSONObject) i);
                     collectActivity(activity);
                 }
@@ -48,7 +48,7 @@ public class ActivityFactory {
     }
 
 
-    private Activity downCast(JSONObject j){
+    private Activity downCast(JSONObject j) {
         String actType = (String) j.get("Activity");
         String actName = (String) j.get("Name");
         String city = (String) j.get("City");
@@ -71,31 +71,33 @@ public class ActivityFactory {
                 return new Activity();
         }
     }
-    private void setOptionals(Activity a, JSONObject j){
-        if (a instanceof Indoor){
+
+    private void setOptionals(Activity a, JSONObject j) {
+        if (a instanceof Indoor) {
             Integer minAge;
             Integer capacity;
             minAge = j.containsKey("Min Age") ? Integer.parseInt((String) j.get("Min Age")) : null;
             capacity = j.containsKey("Capacity") ? Integer.parseInt((String) j.get("Capacity")) : null;
-            if (minAge != null){
+            if (minAge != null) {
                 ((Indoor) a).setMinAge(minAge);
             }
-            if (capacity != null){
+            if (capacity != null) {
                 ((Indoor) a).setCapacity(capacity);
             }
-        } else if (a instanceof Outdoor){
+        } else if (a instanceof Outdoor) {
             String equipment;
             equipment = j.containsKey("Equipment") ? (String) j.get("Equipment") : null;
             if (equipment != null) ((Outdoor) a).setEquipmentRequired(equipment);
-        } else if (a instanceof Restaurant){
+        } else if (a instanceof Restaurant) {
             Integer minAge;
             minAge = j.containsKey("Min Age") ? Integer.parseInt((String) j.get("Min Age")) : null;
-            if (minAge != null){
+            if (minAge != null) {
                 ((Restaurant) a).setMinAge(minAge);
             }
         }
     }
-    private void collectActivity(Activity a){
+
+    private void collectActivity(Activity a) {
         ActivityDB.getInstance().addActivity(a);
     }
 };

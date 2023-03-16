@@ -1,8 +1,6 @@
 package com.won.viewer;
 
 
-
-
 import com.won.model.activity.Activity;
 import com.won.model.user.User;
 
@@ -15,7 +13,7 @@ import java.util.Properties;
 
 /**
  * @author Joshua Richardson
- *  Simple emailer to send "friends" the itinerary
+ * Simple emailer to send "friends" the itinerary
  */
 public class Emailer {
 
@@ -49,7 +47,7 @@ public class Emailer {
 
             StringBuilder setText = new StringBuilder();
             setText.append("Hi!  I would like for you to come with me to the following events:\n");
-            for (var item : itinerary){
+            for (var item : itinerary) {
                 setText.append(item.toString() + "\n");
             }
             message.setText(setText.toString());
