@@ -2,6 +2,11 @@ package com.won.model.user;
 
 import com.won.model.db.ActivityDB;
 
+
+/**
+ * @author Brandon Park
+ * "Actor" of user that is able to track their own wallet, time remaining, and further user specific information
+ */
 public class User {
 
     private String Name;

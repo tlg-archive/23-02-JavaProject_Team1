@@ -2,6 +2,7 @@ package com.won.model.activity;
 
 /**
  * Super class to specific categories of Activity
+ * @author Joshua Richardson
  */
 public class Activity {
     /*

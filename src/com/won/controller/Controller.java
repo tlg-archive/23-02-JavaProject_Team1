@@ -7,18 +7,17 @@ import com.won.model.user.User;
 import java.util.*;
 
 /**
+ * @author Caleb Wise
  * Controller acts as logic behind TeamWon.
+ * Tied directly with DB to make "intelligent" decisions.
  */
 class Controller {
     private Collection<Activity> restaurants = new ArrayList<>();
     private Collection<? extends Activity> activities = new ArrayList<>();
 
-
-
     /**
      * buildItinerary takes a user and returns a Collection<Activity>
      *     randomized as per design requirements.
-     *
      */
     public Collection<Activity> buildItinerary(User user) {
 

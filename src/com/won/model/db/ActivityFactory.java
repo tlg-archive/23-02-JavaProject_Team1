@@ -14,9 +14,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+
+/**
+ * @author Joshua Richardson
+ * JSON loader
+ */
 public class ActivityFactory {
-
-
 
     public void loadJSON(String city, User user) throws IOException, ParseException {
         Object o = new JSONParser().parse(new FileReader(String.valueOf(Path.of("resources/activities.json"))));

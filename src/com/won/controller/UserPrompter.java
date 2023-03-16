@@ -1,5 +1,6 @@
 package com.won.controller;
 
+import com.apps.util.Console;
 import com.apps.util.Prompter;
 import com.won.model.activity.Activity;
 import com.won.model.db.ActivityDB;
@@ -28,13 +29,23 @@ public class UserPrompter {
      * gameloop handles all user input and outsources to outside methods and classes.
      */
     public void gameLoop() {
+        // Load Banner1:
+        ViewPane.displayBanner1();
+        // Get user specifics:
         requestName();
         requestSpendLimit();
         requestEnvironment();
         requestRestaurant();
         requestPartySize();
         requestCity();
+
+        // Build the itinerary and clear the screen
         Collection<Activity> itinerary = controller.buildItinerary(user);
+        Console.clear();
+
+
+        // Display victory banner. Display results.  User interactions.
+        ViewPane.displayBanner2();
         displayResult(itinerary);
         requestWebsites(itinerary);
         requestEmail(itinerary, user);
@@ -68,7 +79,7 @@ public class UserPrompter {
                     requestLocation("Denver", user);
                     return;
                 default:
-                    prompter.prompt("Invalid choice. Please choose again (1 or 2).");
+                    System.out.println("Invalid choice.");
             }
         }
     }

@@ -2,6 +2,11 @@ package com.won.model.activity;
 
 import com.won.model.activity.Activity;
 
+
+/**
+ *  Restaurant specific activities
+ * @author Joshua Richardson
+ */
 public class Restaurant extends Activity {
     /*
      * ATTRIBUTES AND FIELDS

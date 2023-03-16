@@ -7,6 +7,12 @@ import com.won.model.activity.Restaurant;
 
 import java.util.*;
 
+
+/**
+ * @author Joshua Richardson
+ * receives JSON and holds all activites with the ability to shuffle
+ *  and able to retrieve an activity by type.
+ */
 public class ActivityDB {
     private Collection<Activity> allActivities = new ArrayList<>();
 

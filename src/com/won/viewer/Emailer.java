@@ -12,12 +12,17 @@ import javax.mail.internet.MimeMessage;
 import java.util.Collection;
 import java.util.Properties;
 
+
+/**
+ * @author Joshua Richardson
+ *  Simple emailer to send "friends" the itinerary
+ */
 public class Emailer {
 
     public static void email(String emailAddresses, Collection<Activity> itinerary, User user) {
 
-        final String username = "joshua.richardson.tlgcohort@gmail.com";
-        final String password = "qzztmqfsgeruynmk";
+        final String username = "tlgitinerary@gmail.com";
+        final String password = "hjfhpqnfkwutrgtr";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");

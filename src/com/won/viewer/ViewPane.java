@@ -2,9 +2,42 @@ package com.won.viewer;
 
 import com.won.model.activity.Activity;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Collection;
 
-public class ViewPane {
+/**
+ * @author Brandon Park
+ *  UI output of activities to display for program user.
+ */
+    public class ViewPane {
+
+
+        public static void displayBanner1() {
+            try{
+//            String banner = Files.readString(Path.of("resources/banner2.txt"));
+            Files.lines(Path.of("resources/banner2.txt"))
+                .forEach(System.out::println);
+            } catch (Exception e) {
+                e.getMessage();
+                e.printStackTrace();
+            }
+        }
+        public static void displayBanner2() {
+            try{
+//            String banner = Files.readString(Path.of("resources/banner1.txt"));
+            Files.lines(Path.of("resources/banner1.txt"))
+                .forEach(System.out::println);
+            } catch (Exception e) {
+                e.getMessage();
+                e.printStackTrace();
+            }
+        }
+
+
+
     public static void displayResult(Collection<Activity> itinerary) {
         if (itinerary.isEmpty()) {
             System.out.println("Unfortunately, there is currently no available activites based on your critieria");

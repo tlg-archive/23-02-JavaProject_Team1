@@ -1,5 +1,10 @@
 package com.won.model.activity;
 
+
+/**
+ *  Indoor specific activities
+ * @author Joshua Richardson
+ */
 public class Indoor extends Activity {
  /*
   * INDOOR SPECIFIC ATTRIBUTES

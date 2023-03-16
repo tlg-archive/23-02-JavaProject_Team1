@@ -1,7 +1,10 @@
 package com.won.model.activity;
 
 
-
+/**
+ *  Outdoor specific activities
+ * @author Joshua Richardson
+ */
 public class Outdoor extends Activity {
     /*
      * ATTRIBUTES AND FIELDS
